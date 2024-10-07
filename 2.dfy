@@ -1,22 +1,22 @@
 // 常量定义  
 const BANNER: string;  
-const PRV_S: bv32;  
-const MSTATUS_MPP: bv32;
-const MSTATUS_MPIE: bv32;
+const PRV_S: bv64;  
+const MSTATUS_MPP: bv64;
+const MSTATUS_MPIE: bv64;
 // 常量定义  
 const MAX_CSR_PMP: int := 16;  // 假设最大PMP条目数为16  
 const PMP_SHIFT: int := 2;  
 const RISCV_XLEN: int := 64;  // 假设是64位RISC-V  
 const PMP_RWX: int := 7;  // Read (1) + Write (2) + Execute (4)  
-const FW_JUMP_ADDR: bv32 := 0x80200000;  
+const FW_JUMP_ADDR: bv64 := 0x80200000;  
 
 // 模拟CSR寄存器  
 class CSRState {  
-  var mstatus: bv32;  
-  var mepc: bv32;  
-  var stvec: bv32;  
-  var sie: bv32;  
-  var satp: bv32;  
+  var mstatus: bv64;  
+  var mepc: bv64;  
+  var stvec: bv64;  
+  var sie: bv64;  
+  var satp: bv64;  
   var pmpcfg: array<int>;  
   var pmpaddr: array<int>;  
 
@@ -53,7 +53,7 @@ method delegate_traps()
 
 // 模拟CSR操作的方法  
 
-method read_csr(reg: CSRState, csr_name: string) returns (value: bv32)  
+method read_csr(reg: CSRState, csr_name: string) returns (value: bv64)  
 {  
   match csr_name  
   {  
@@ -64,7 +64,7 @@ method read_csr(reg: CSRState, csr_name: string) returns (value: bv32)
   }  
 }  
 
-method write_csr(regs: CSRState, csr_name: string, value: bv32) returns (updated_regs: CSRState)  
+method write_csr(regs: CSRState, csr_name: string, value: bv64) returns (updated_regs: CSRState)  
 {  
   // 创建一个新的 CSRState 对象来存储更新后的状态  
   updated_regs := new CSRState();  
@@ -89,7 +89,7 @@ method init_print()
 // 主方法  
 method sbi_main()     
 {  
-  var val: bv32;  
+  var val: bv64;  
   uart_init(); 
   init_print();  
   printk(BANNER); 
@@ -115,61 +115,61 @@ method sbi_main()
   sys := switch_to_s_mode(sys); 
 }  
 method switch_to_s_mode(sys: SystemState) returns (updated_sys: SystemState) 
-function bitnot32(x: bv32): bv32  
+function bitnot64(x: bv64): bv64  
 {  
-  !x as bv32  
+  !x as bv64  
 }  
-function INSERT_FIELD(val: bv32, which: bv32, fieldval: bv32): bv32 
+function INSERT_FIELD(val: bv64, which: bv64, fieldval: bv64): bv64 
 {  
- (val & bitnot32(which)) | (fieldval & which)
+ (val & bitnot64(which)) | (fieldval & which)
 }  
-predicate fieldval_in_range(fieldval: bv32, which: bv32)  
+predicate fieldval_in_range(fieldval: bv64, which: bv64)  
 {  
-  (fieldval & bitnot32(which)) == 0   // 确保 fieldval 不超过 which 定义的范围  
+  (fieldval & bitnot64(which)) == 0   // 确保 fieldval 不超过 which 定义的范围  
 }  
 
 // 辅助引理1：A & !B | C & B 的 which 部分等于 C & B  
-lemma InsertFieldWhichPart(val: bv32, which: bv32, fieldval: bv32)  
-  ensures ((val & bitnot32(which)) | (fieldval & which)) & which == fieldval & which  
+lemma InsertFieldWhichPart(val: bv64, which: bv64, fieldval: bv64)  
+  ensures ((val & bitnot64(which)) | (fieldval & which)) & which == fieldval & which  
 {  
   // Dafny 应该能自动证明这个基本性质  
 }  
 
 // 辅助引理2：A & !B | C & B 的非 which 部分等于 A & !B  
-lemma InsertFieldNotWhichPart(A: bv32, B: bv32, C: bv32)  
-  ensures ((A & bitnot32(B)) | (C & B)) & bitnot32(B) == A & bitnot32(B)  
+lemma InsertFieldNotWhichPart(A: bv64, B: bv64, C: bv64)  
+  ensures ((A & bitnot64(B)) | (C & B)) & bitnot64(B) == A & bitnot64(B)  
 {  
   // Dafny 应该能自动证明这个基本性质  
 } 
 
-lemma ProveUnchangedBits(val: bv32, which: bv32, fieldval: bv32)  
-  ensures ((val & bitnot32(which)) | (fieldval & which)) & bitnot32(which)  
-        == val & bitnot32(which)  
+lemma ProveUnchangedBits(val: bv64, which: bv64, fieldval: bv64)  
+  ensures ((val & bitnot64(which)) | (fieldval & which)) & bitnot64(which)  
+        == val & bitnot64(which)  
 {  
   calc {  
-    ((val & bitnot32(which)) | (fieldval & which)) & bitnot32(which);  
+    ((val & bitnot64(which)) | (fieldval & which)) & bitnot64(which);  
     == // 分配律  
-    (val & bitnot32(which) & bitnot32(which)) | (fieldval & which & bitnot32(which));  
+    (val & bitnot64(which) & bitnot64(which)) | (fieldval & which & bitnot64(which));  
     == // A & A = A  
-    (val & bitnot32(which)) | (fieldval & which & bitnot32(which));  
+    (val & bitnot64(which)) | (fieldval & which & bitnot64(which));  
     == // A & !A = 0  
-    (val & bitnot32(which)) | 0;  
+    (val & bitnot64(which)) | 0;  
     == // A | 0 = A  
-    val & bitnot32(which);  
+    val & bitnot64(which);  
   }  
 }
 
 // 性质1：which 覆盖的位来自 fieldval  
-lemma INSERT_FIELD_Property1(val: bv32, which: bv32, fieldval: bv32)  
+lemma INSERT_FIELD_Property1(val: bv64, which: bv64, fieldval: bv64)  
   requires fieldval & which == fieldval  
   ensures INSERT_FIELD(val, which, fieldval) & which == fieldval  
 {  
   calc {  
     INSERT_FIELD(val, which, fieldval) & which;  
     == // 展开 INSERT_FIELD 的定义  
-    ((val & bitnot32(which)) | (fieldval & which)) & which;  
+    ((val & bitnot64(which)) | (fieldval & which)) & which;  
     == // 位运算的分配律  
-    (val & bitnot32(which) & which) | (fieldval & which & which);  
+    (val & bitnot64(which) & which) | (fieldval & which & which);  
     == // A & !A == 0, A & A == A  
     0 | (fieldval & which);  
     == // 0 | A == A  
@@ -180,43 +180,43 @@ lemma INSERT_FIELD_Property1(val: bv32, which: bv32, fieldval: bv32)
 }  
 
 // 性质2：未被 which 覆盖的位保持不变  
-lemma INSERT_FIELD_Property2(val: bv32, which: bv32, fieldval: bv32)  
-  ensures INSERT_FIELD(val, which, fieldval) & bitnot32(which) == val & bitnot32(which)  
+lemma INSERT_FIELD_Property2(val: bv64, which: bv64, fieldval: bv64)  
+  ensures INSERT_FIELD(val, which, fieldval) & bitnot64(which) == val & bitnot64(which)  
 {  
   calc {  
-    INSERT_FIELD(val, which, fieldval) & bitnot32(which);  
+    INSERT_FIELD(val, which, fieldval) & bitnot64(which);  
     == // 展开 INSERT_FIELD 的定义  
-    ((val & bitnot32(which)) | (fieldval & which)) & bitnot32(which);  
+    ((val & bitnot64(which)) | (fieldval & which)) & bitnot64(which);  
     == // 位运算的分配律  
-    (val & bitnot32(which) & bitnot32(which)) | (fieldval & which & bitnot32(which));  
+    (val & bitnot64(which) & bitnot64(which)) | (fieldval & which & bitnot64(which));  
     == // A & A == A, A & !A == 0  
-    (val & bitnot32(which)) | 0;  
+    (val & bitnot64(which)) | 0;  
     == // A | 0 == A  
-    val & bitnot32(which);  
+    val & bitnot64(which);  
   }  
 }  
 
 
 // 性质3：结果是预期的组合  
-lemma INSERT_FIELD_Property3(val: bv32, which: bv32, fieldval: bv32)  
+lemma INSERT_FIELD_Property3(val: bv64, which: bv64, fieldval: bv64)  
   requires fieldval & which == fieldval  
-  ensures INSERT_FIELD(val, which, fieldval) == ((val & bitnot32(which)) | fieldval)  
+  ensures INSERT_FIELD(val, which, fieldval) == ((val & bitnot64(which)) | fieldval)  
 {  
   calc {  
     INSERT_FIELD(val, which, fieldval);  
     == // INSERT_FIELD 的定义  
-    (val & bitnot32(which)) | (fieldval & which);  
+    (val & bitnot64(which)) | (fieldval & which);  
     == // 根据前提条件 fieldval & which == fieldval  
-    (val & bitnot32(which)) | fieldval;  
+    (val & bitnot64(which)) | fieldval;  
   }  
 }  
 
 // 综合所有性质的引理  
-lemma INSERT_FIELD_AllProperties(val: bv32, which: bv32, fieldval: bv32)  
+lemma INSERT_FIELD_AllProperties(val: bv64, which: bv64, fieldval: bv64)  
   requires fieldval & which == fieldval  
   ensures INSERT_FIELD(val, which, fieldval) & which == fieldval  
-  ensures INSERT_FIELD(val, which, fieldval) & bitnot32(which) == val & bitnot32(which)  
-  ensures INSERT_FIELD(val, which, fieldval) == ((val & bitnot32(which)) | fieldval)  
+  ensures INSERT_FIELD(val, which, fieldval) & bitnot64(which) == val & bitnot64(which)  
+  ensures INSERT_FIELD(val, which, fieldval) == ((val & bitnot64(which)) | fieldval)  
 {  
   INSERT_FIELD_Property1(val, which, fieldval);  
   INSERT_FIELD_Property2(val, which, fieldval);  
@@ -224,7 +224,7 @@ lemma INSERT_FIELD_AllProperties(val: bv32, which: bv32, fieldval: bv32)
 }  
 
 
-function get_field(val: bv32, which: bv32): bv32 
+function get_field(val: bv64, which: bv64): bv64 
 {  
   val & which  
 }  
@@ -232,9 +232,9 @@ function get_field(val: bv32, which: bv32): bv32
 
 method TestInsertField()  
 {  
-  var val: bv32 := 0xFFFFFFFF;  
-  var which: bv32 := 0x00000F00;  
-  var fieldval: bv32 := 0x00000500;  
+  var val: bv64 := 0xFFFFFFFF;  
+  var which: bv64 := 0x00000F00;  
+  var fieldval: bv64 := 0x00000500;  
   
   var result := INSERT_FIELD(val, which, fieldval);  
   
@@ -246,13 +246,13 @@ method TestInsertField()
 }  
 // method TestInsertField()  
 // {  
-//   var val: bv32:= 0xFFFFFFFF;  
-//   var which: bv32 := 0x0000000000000F00;  
-//   var fieldval: bv32 := 0x0000000000000500;  
+//   var val: bv64:= 0xFFFFFFFF;  
+//   var which: bv64 := 0x0000000000000F00;  
+//   var fieldval: bv64 := 0x0000000000000500;  
   
 //   var result := INSERT_FIELD(val, which, fieldval);  
   
 //   assert result == 0xFFFFF5FF;  
 //   assert get_field(result, which) == fieldval;  
-//   assert get_field(result, bitnot32(which)) == get_field(val, bitnot32(which));  
+//   assert get_field(result, bitnot64(which)) == get_field(val, bitnot64(which));  
 // }  
