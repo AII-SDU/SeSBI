@@ -67,25 +67,4 @@ proof -
     unfolding valid_pmp_entry_def PMP_RWX_def
     by simp
 qed
-
-lemma INSERT_FIELD_Property1(val: bv64, which: bv64, fieldval: bv64)  
-  requires fieldval & which == fieldval  
-  ensures INSERT_FIELD(val, which, fieldval) & which == fieldval {  
-  calc {  
-    INSERT_FIELD(val, which, fieldval) & which;  
-    == ((val & bitnot64(which)) | (fieldval & which)) & which;  
-    == (val & bitnot64(which) & which) | (fieldval & which & which);  
-    == 0 | (fieldval & which);  
-    ==fieldval & which; == fieldval; }}  
-
-lemma INSERT_FIELD_Property2(val: bv64, which: bv64, fieldval: bv64)  
-  ensures INSERT_FIELD(val, which, fieldval) & bitnot64(which) 
-  == val & bitnot64(which) {  
-  calc {  
-    INSERT_FIELD(val, which, fieldval) & bitnot64(which); 
-    ((val & bitnot64(which)) | (fieldval & which)) & bitnot64(which);  
-    (val & bitnot64(which) & bitnot64(which)) | 
-    (fieldval & which & bitnot64(which)); 
-    (val & bitnot64(which)) | 0;  
-    val & bitnot64(which);}} 
 end
