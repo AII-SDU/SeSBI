@@ -15,10 +15,12 @@ measure of assurance strength.
 
 ## Start here
 
-After the release has been published, a fresh public-clone workflow is:
+For the JSA revision, use the version-pinned
+`jsa-d-26-00258-v2` release:
 
 ```bash
-git clone https://github.com/NikolaIIIII/SeSBI-code.git SeSBI-artifact
+git clone --branch jsa-d-26-00258-v2 \
+  https://github.com/AII-SDU/SeSBI.git SeSBI-artifact
 cd SeSBI-artifact
 
 # Inspect the exact plan without running tools or creating run outputs.

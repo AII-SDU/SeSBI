@@ -17,7 +17,7 @@ Usage: tools/release/build_release_tree.sh DESTINATION
 
 Assemble the public SeSBI release from an explicit source allowlist. The
 destination may be a new/empty directory or the root of a clean Git working
-tree (for example, a clean clone of NikolaIIIII/SeSBI-code). A root .git/
+tree (for example, a clean clone of AII-SDU/SeSBI). A root .git/
 directory is preserved. If the source tree does not yet contain README.md, an
 existing destination README.md is also preserved; otherwise the source README
 replaces it.
