@@ -1,0 +1,6 @@
+tag,injected,expected_hits,actual_hits,build_exit,qemu_exit,suites_seen,tests_total,tests_failed,completed,verdict,obj_sha_changed,fw_sha_changed
+baseline,no,0,-,0,124,8,41,0,yes,MISSED,baseline,baseline
+m1_napot,yes,1,1,0,124,8,41,0,yes,MISSED,yes,yes
+m2_pmpcfg,yes,2,2,0,124,8,41,0,yes,MISSED,yes,yes
+m3_mpie,yes,1,1,0,124,8,41,0,yes,MISSED,yes,yes
+m4_log2,yes,1,1,0,124,8,41,1,yes,CAUGHT,yes,yes

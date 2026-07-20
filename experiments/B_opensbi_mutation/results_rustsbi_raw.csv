@@ -1,0 +1,5 @@
+tag,injected,expected_hits,actual_hits,mutated_pkg,in_default_test_set,test_cmd,tests_total,tests_failed,completed,verdict
+baseline_lib,no,0,-,(none),yes,cargo test ,209,0,yes,MISSED
+rm1_pmp,yes,1,1,rustsbi-prototyper,no,cargo test ,209,0,yes,MISSED
+baseline_spec,no,0,-,(none),yes,cargo test -p sbi-spec,56,0,yes,MISSED
+rm2_hasbit,yes,1,1,sbi-spec,yes,cargo test -p sbi-spec,27,2,yes,CAUGHT

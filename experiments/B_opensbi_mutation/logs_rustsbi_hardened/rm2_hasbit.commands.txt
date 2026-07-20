@@ -1,0 +1,3 @@
+cargo test -p sbi-spec  # tag=rm2_hasbit
+cargo_test_exit=101
+parsed passed=25 failed=2 total=27 completed=yes

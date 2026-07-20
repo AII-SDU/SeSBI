@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/B_opensbi_mutation/logs_hardened/m3_mpie.sbi_hart.c.orig	2026-07-10 15:25:20.080508720 +0800
++++ lib/sbi/sbi_hart.c	2026-07-10 15:25:20.083508730 +0800
+@@ -815,7 +815,7 @@
+ 
+ 	val = csr_read(CSR_MSTATUS);
+ 	val = INSERT_FIELD(val, MSTATUS_MPP, next_mode);
+-	val = INSERT_FIELD(val, MSTATUS_MPIE, 0);
++	/*MUT-MPIE dropped:*/ //	val = INSERT_FIELD(val, MSTATUS_MPIE, 0);
+ #if __riscv_xlen == 32
+ 	if (misa_extension('H')) {
+ 		valH = csr_read(CSR_MSTATUSH);

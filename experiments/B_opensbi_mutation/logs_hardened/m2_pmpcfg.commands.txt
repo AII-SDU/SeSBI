@@ -1,0 +1,6 @@
+make -j8 PLATFORM=generic  # tag=m2_pmpcfg
+build_exit=0
+patched_obj=build/lib/sbi/sbi_hart_pmp.o obj_sha256=930137b90be436dc4614b82f94fe87394576b44d5b741b1a4866eb16f6b3d66b
+fw_dynamic_bin_sha256=6216ec9e5c2961a21b3c183dc934cc983642df73fc55ea7c678198ae91bae483
+timeout 60 qemu-system-riscv64 -M virt -nographic -bios build/platform/generic/firmware/fw_dynamic.bin  # tag=m2_pmpcfg
+qemu_exit=124  (124=timeout-kill after tests finish = EXPECTED)

@@ -1,0 +1,10 @@
+make PLATFORM=generic clean
+clean_exit=0
+make -j8 PLATFORM=generic
+build_exit=0
+patched_object_sha256=21d50842eaef33bd9ebfa72830aaec086deff4a17ea3fcb820aeab28f9b45f6d
+firmware_sha256=11fab3f782e34143d52164aa40703916404bb87493c2dd001482947d26966431
+timeout 60 qemu-system-riscv64 -M virt -nographic -bios build/platform/generic/firmware/fw_dynamic.bin
+qemu_exit=124
+post_test_runtime_error=no
+runtime_error_count=0

@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/formal/d1_pmpcfg_byte_fold.dfy.orig	2026-07-11 22:22:16.246098665 +0800
++++ /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/formal/d1_pmpcfg_byte_fold.dfy	2026-07-11 22:22:16.252098681 +0800
+@@ -19,7 +19,7 @@
+   { if idx < 8 then 0 else 2 }
+   function PmpCfgByteOffset(idx: nat): nat
+     requires ValidPmpIndex(idx)
+-  { idx % 8 }
++  { idx % 4 }
+   function PmpCfgShift(idx: nat): nat
+     requires ValidPmpIndex(idx)
+   { 8 * PmpCfgByteOffset(idx) }

@@ -1,0 +1,20 @@
+--- /home/user/sesbi-JSA/experiments/B_opensbi_mutation/logs_hardened/m2_pmpcfg.sbi_hart_pmp.c.orig	2026-07-10 15:24:19.180295626 +0800
++++ lib/sbi/sbi_hart_pmp.c	2026-07-10 15:24:19.183295636 +0800
+@@ -31,7 +31,7 @@
+ 	pmpcfg_shift = (n & 3) << 3;
+ #elif __riscv_xlen == 64
+ 	pmpcfg_csr   = (CSR_PMPCFG0 + (n >> 2)) & ~1;
+-	pmpcfg_shift = (n & 7) << 3;
++	pmpcfg_shift = (n & 3) << 3; /*MUT-PMPCFG*/
+ #else
+ # error "Unexpected __riscv_xlen"
+ #endif
+@@ -59,7 +59,7 @@
+ 	pmpcfg_shift = (n & 3) << 3;
+ #elif __riscv_xlen == 64
+ 	pmpcfg_csr   = (CSR_PMPCFG0 + (n >> 2)) & ~1;
+-	pmpcfg_shift = (n & 7) << 3;
++	pmpcfg_shift = (n & 3) << 3; /*MUT-PMPCFG*/
+ #else
+ # error "Unexpected __riscv_xlen"
+ #endif

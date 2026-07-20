@@ -1,0 +1,15 @@
+=== Method A: functional-test half ===
+
+[NAPOT] representative suite (in-region allow checks): buggy==fixed? YES (miss)
+        boundary probe base+2^18 (0x80040000): buggy_covers=1 fixed_covers=0  <-- needed to catch
+
+[PMPCFG] representative suite (entries 0..7): buggy==fixed? NO (caught)
+        high-entry probe idx=12: buggy_off=0 fixed_off=32  <-- needed to catch
+
+[MSTATUS] representative suite (MPP==S after setup): buggy==fixed? YES (miss)
+        MPIE-observing probe: buggy_MPIE=0 fixed_MPIE=1  <-- needed to catch
+
+[TIMER] representative suite (deadlines < 2^63): buggy==fixed? YES (miss)
+        high-value probe cmp>2^63 (0x8000000000000010): buggy_expired=1 fixed_expired=0  <-- needed to catch
+
+=== summary: representative functional suites missed all four bugs? NO ===

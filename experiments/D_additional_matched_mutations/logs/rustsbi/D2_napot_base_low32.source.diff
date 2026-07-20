@@ -1,0 +1,10 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/rustsbi/pmpm_lib.rs.clean	2026-07-11 22:09:27.348547073 +0800
++++ /home/user/sesbi-JSA/rustsbi/library/pmpm/src/lib.rs	2026-07-11 22:09:31.077560713 +0800
+@@ -94,6 +94,7 @@
+     let log2len = slice.log2len & (usize::BITS | (usize::BITS - 1));
+     match range {
+         Range::NAPOT => {
++            addr = (addr as u32) as usize; /*MUT-D2-NAPOT-BASE-LOW32*/
+             if log2len == usize::BITS {
+                 usize::MAX
+             } else {

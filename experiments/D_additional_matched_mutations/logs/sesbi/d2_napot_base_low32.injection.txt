@@ -1,0 +1,6 @@
+tag=d2_napot_base_low32
+expected_hits=1
+actual_hits=1
+pristine_source_sha256=7b57908ec423058d4daeb35c8a9bb119ea079456d112e26166d2195e87256e7f
+mutant_source_sha256=992efae23e07d441ad5785760c96b9204c3192838d3ee6a355142c76d05603f3
+marker=MUT-D2-NAPOT-BASE-LOW32

@@ -1,0 +1,7 @@
+impl,mutation,bug_class,injection_site,own_tests,tests_failed,verdict
+opensbi,M1_napot,NAPOT addrmask off-by-one,sbi_pmp.c:62,41 unit,0,MISSED
+opensbi,M2_pmpcfg,pmpcfg byte offset n&7->n&3,sbi_hart_pmp.c:34+62,41 unit,0,MISSED
+opensbi,M3_mpie,mstatus MPIE dropped in hart switch,sbi_hart.c:818,41 unit,0,MISSED
+opensbi,M4_log2_CONTROL,log2roundup off-by-one (is unit-tested),sbi_math.c:17,41 unit,1,CAUGHT
+rustsbi,RM1_pmp_isolation,PMP region NONE->RWX (isolation weakened),prototyper set_pmp,cargo test (lib),0,MISSED
+rustsbi,RM2_CONTROL,inverted has_bit (is unit-tested),sbi-spec mask_commons.rs,56 unit,2,CAUGHT

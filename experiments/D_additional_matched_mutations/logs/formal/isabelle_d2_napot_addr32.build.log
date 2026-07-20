@@ -1,0 +1,22 @@
+Cleaned SeSBI_PMP
+Running SeSBI_PMP ...
+SeSBI_PMP FAILED (see also "isabelle build_log -H Error SeSBI_PMP")
+*** Failed to finish proof (line 104 of "/tmp/sesbi-additional-isabelle.AZH4sV/SeSBI_PMP_NAPOT.thy"):
+*** goal (4 subgoals):
+***  1. ⋀n. ⟦n < 64; bit start (Suc (Suc n)); ¬ n < k - 2; ¬ n < 63⟧ ⟹ False
+***  2. ⋀n. ⟦n < 64; bit start (Suc (Suc n)); ¬ n < k - 2; ¬ n < 63⟧ ⟹ False
+***  3. ⋀n. ⟦n < 64; bit start (Suc (Suc n)); ¬ n < k - 2⟧ ⟹ n < 62
+***  4. ⋀n. ⟦n < 64; bit start (Suc (Suc n)); ¬ n < k - 2⟧
+***         ⟹ n < 30
+*** At command "by" (line 104 of "/tmp/sesbi-additional-isabelle.AZH4sV/SeSBI_PMP_NAPOT.thy")
+*** Failed to finish proof (line 156 of "/tmp/sesbi-additional-isabelle.AZH4sV/SeSBI_PMP_NAPOT.thy"):
+*** goal (1 subgoal):
+***  1. drop_bit 2 (ucast (ucast start)) AND NOT (mask (k - 2)) OR
+***     mask (k - 3) =
+***     drop_bit 2 start AND NOT (mask (k - 2)) OR
+***     mask
+***      (k -
+***       3)
+*** At command "by" (line 156 of "/tmp/sesbi-additional-isabelle.AZH4sV/SeSBI_PMP_NAPOT.thy")
+Unfinished session(s): SeSBI_PMP
+0:01:16 elapsed time, 0:05:49 cpu time, factor 4.58

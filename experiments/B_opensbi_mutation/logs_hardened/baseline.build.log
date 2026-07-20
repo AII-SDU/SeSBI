@@ -1,0 +1,13 @@
+ CC-DEP    lib/sbi/sbi_math.dep
+ CC        lib/sbi/sbi_math.o
+ AR        lib/libsbi.a
+ AR        platform/generic/lib/libplatsbi.a
+ ELF       platform/generic/firmware/payloads/test.elf
+ ELF       platform/generic/firmware/fw_dynamic.elf
+ ELF       platform/generic/firmware/fw_jump.elf
+ OBJCOPY   platform/generic/firmware/payloads/test.bin
+ AS        platform/generic/firmware/fw_payload.o
+ ELF       platform/generic/firmware/fw_payload.elf
+ OBJCOPY   platform/generic/firmware/fw_dynamic.bin
+ OBJCOPY   platform/generic/firmware/fw_jump.bin
+ OBJCOPY   platform/generic/firmware/fw_payload.bin

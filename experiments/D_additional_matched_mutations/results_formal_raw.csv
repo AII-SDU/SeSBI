@@ -1,0 +1,7 @@
+system,tag,paired_semantic_mutation,expected_hits,actual_hits,baseline_exit,mutant_exit,baseline_verified,mutant_verified,mutant_failures,outcome
+dafny,baseline,no,0,0,0,0,308,308,0,PASS
+dafny,d1_pmpcfg_byte_fold,idx_mod_8_to_idx_mod_4,1,1,0,4,308,306,2,CAUGHT
+dafny,d3_pmpcfg_high_bank,high_bank_2_to_0,1,1,0,4,308,306,2,CAUGHT
+isabelle,baseline,no,0,0,0,0,0,0,0,PASS
+isabelle,d1_pmpcfg_byte_fold,i_to_i_mod_4,1,1,0,1,0,0,2,CAUGHT
+isabelle,d2_napot_addr32,start64_to_zero_extend_low32,1,1,0,1,0,0,2,CAUGHT

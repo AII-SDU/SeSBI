@@ -1,0 +1,44 @@
+# Local agent/editor state
+/.agents/
+/.codex/
+/.vscode/
+/.idea/
+/.DS_Store
+
+# Release assembly and unified reproduction output
+/publish/
+/tools/reproduction/runs/
+/artifact/paper_experiment_support/out/
+/artifact/sbi3/out/
+
+# SeSBI build products and temporary link files
+/SeSBI-code/build/
+/SeSBI-code/.tmp_*
+/SeSBI-code/*.bin
+/SeSBI-code/*.elf
+/SeSBI-code/*.map
+
+# Compiled targeted tests
+/experiments/A_detection_matrix/functional/functional_tests
+
+# Third-party metadata/build output restored locally from bundles
+/experiments/B_opensbi_mutation/opensbi_upstream/.git/
+/experiments/B_opensbi_mutation/opensbi_upstream/build/
+/rustsbi/.git/
+/rustsbi/target/
+
+# Formal-tool caches and machine-local links
+/isabelle-SeSBI/sail-generated/sail_smt_cache
+/isabelle-SeSBI/sesbi-SeSBI
+/dafny-SeSBI-table4/obj/
+
+# Language caches
+**/__pycache__/
+*.py[cod]
+
+# Common native build by-products (retained experiment logs are intentionally
+# not ignored)
+*.o
+*.a
+*.so
+*.d

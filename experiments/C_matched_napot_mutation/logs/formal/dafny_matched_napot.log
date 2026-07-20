@@ -1,0 +1,12 @@
+experiments/A_detection_matrix/dafny_inject/napot_buggy.dfy(56,2): Error: a postcondition could not be proved on this return path
+   |
+56 |   {
+   |   ^
+
+experiments/A_detection_matrix/dafny_inject/napot_buggy.dfy(55,32): Related location: this is the postcondition that could not be proved
+   |
+55 |     ensures NapotMask(size) + 1 == size / 8
+   |                                 ^^
+
+
+Dafny program verifier finished with 307 verified, 1 error

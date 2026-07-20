@@ -1,0 +1,6 @@
+make -j8 PLATFORM=generic  # tag=m1_napot
+build_exit=0
+patched_obj=build/lib/sbi/sbi_pmp.o obj_sha256=5444977e19c68d433a442f5d284631f6971268754fb3eee471dcfafc62be9c56
+fw_dynamic_bin_sha256=6c81241e326e4e8595e0338e42d568919a39100a7df259fdd4a0715c7b19ede1
+timeout 60 qemu-system-riscv64 -M virt -nographic -bios build/platform/generic/firmware/fw_dynamic.bin  # tag=m1_napot
+qemu_exit=124  (124=timeout-kill after tests finish = EXPECTED)

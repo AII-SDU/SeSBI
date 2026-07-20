@@ -1,0 +1,6 @@
+tag=d1_pmpcfg_byte_fold
+expected_hits=1
+actual_hits=1
+pristine_source_sha256=7b57908ec423058d4daeb35c8a9bb119ea079456d112e26166d2195e87256e7f
+mutant_source_sha256=f5eac4f5cfbfd0e3ea79dd6ea21b5243aa0353e8c4754752946ea1c848e069c0
+marker=MUT-D1-PMPCFG-BYTE-FOLD

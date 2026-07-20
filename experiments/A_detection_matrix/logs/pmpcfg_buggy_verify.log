@@ -1,0 +1,22 @@
+pmpcfg_buggy.dfy(231,2): Error: a postcondition could not be proved on this return path
+    |
+231 |   {
+    |   ^
+
+pmpcfg_buggy.dfy(230,62): Related location: this is the postcondition that could not be proved
+    |
+230 |     ensures PmpCfgCsrIndex(idx) == 0 && PmpCfgByteOffset(idx) == idx
+    |                                                               ^^
+
+pmpcfg_buggy.dfy(236,2): Error: a postcondition could not be proved on this return path
+    |
+236 |   {
+    |   ^
+
+pmpcfg_buggy.dfy(235,62): Related location: this is the postcondition that could not be proved
+    |
+235 |     ensures PmpCfgCsrIndex(idx) == 2 && PmpCfgByteOffset(idx) == idx - 8
+    |                                                               ^^
+
+
+Dafny program verifier finished with 306 verified, 2 errors

@@ -1,0 +1,33 @@
+[1;37m[RustSBI] [1;32mINFO [0m - Hello RustSBI!
+[1;37m[RustSBI] [1;32mINFO [0m - RustSBI version 0.4.1
+[1;37m[RustSBI] [1;32mINFO [0m - .______       __    __      _______.___________.  _______..______   __
+[1;37m[RustSBI] [1;32mINFO [0m - |   _  \     |  |  |  |    /       |           | /       ||   _  \ |  |
+[1;37m[RustSBI] [1;32mINFO [0m - |  |_)  |    |  |  |  |   |   (----`---|  |----`|   (----`|  |_)  ||  |
+[1;37m[RustSBI] [1;32mINFO [0m - |      /     |  |  |  |    \   \       |  |      \   \    |   _  < |  |
+[1;37m[RustSBI] [1;32mINFO [0m - |  |\  \----.|  `--'  |.----)   |      |  |  .----)   |   |  |_)  ||  |
+[1;37m[RustSBI] [1;32mINFO [0m - | _| `._____| \______/ |_______/       |__|  |_______/    |______/ |__|
+[1;37m[RustSBI] [1;32mINFO [0m - Initializing RustSBI machine-mode environment.
+[1;37m[RustSBI] [1;32mINFO [0m - Platform Name                 : riscv-virtio,qemu
+[1;37m[RustSBI] [1;32mINFO [0m - Platform HART Count           : 1
+[1;37m[RustSBI] [1;32mINFO [0m - Enabled HARTs                 : [0]
+[1;37m[RustSBI] [1;32mINFO [0m - Platform IPI Extension        : SiFiveClint (Base Address: 0x2000000)
+[1;37m[RustSBI] [1;32mINFO [0m - Platform Console Extension    : Uart16550U8 (Base Address: 0x10000000)
+[1;37m[RustSBI] [1;32mINFO [0m - Platform Reset Extension      : Available (Base Address: 0x100000)
+[1;37m[RustSBI] [1;32mINFO [0m - Platform HSM Extension        : Available
+[1;37m[RustSBI] [1;32mINFO [0m - Platform RFence Extension     : Available
+[1;37m[RustSBI] [1;32mINFO [0m - Platform SUSP Extension       : Available
+[1;37m[RustSBI] [1;93mWARN [0m - Platform PMU Extension        : Not Available
+[1;37m[RustSBI] [1;32mINFO [0m - Memory range                  : 0x80000000 - 0x90000000
+[1;37m[RustSBI] [1;32mINFO [0m - Platform Status               : Platform initialization complete and ready.
+[1;37m[RustSBI] [1;32mINFO [0m - PMP Configuration
+[1;37m[RustSBI] [1;32mINFO [0m - PMP   Range      Permission      Address                       
+[1;37m[RustSBI] [1;32mINFO [0m - 0     OFF        NONE            0x0000000000000000
+[1;37m[RustSBI] [1;32mINFO [0m - 1     TOR        RWX             0x0000000080000000
+[1;37m[RustSBI] [1;32mINFO [0m - 2     TOR        RWX             0x0000000080000000
+[1;37m[RustSBI] [1;32mINFO [0m - 3     TOR        R               0x000000008002a000
+[1;37m[RustSBI] [1;32mINFO [0m - 4     TOR        NONE            0x0000000080038000
+[1;37m[RustSBI] [1;32mINFO [0m - 5     TOR        RW              0x0000000080072000
+[1;37m[RustSBI] [1;32mINFO [0m - 6     TOR        RWX             0x0000000090000000
+[1;37m[RustSBI] [1;32mINFO [0m - 7     TOR        RWX             0xfffffffffffffffc
+[1;37m[RustSBI] [1;32mINFO [0m - Boot HART ID                  : 0
+

@@ -1,0 +1,67 @@
+D2 existing NAPOT encode-test base audit
+full_address_space_base=0x0 below_2^32=yes
+64KiB_case_base=0x10000 below_2^32=yes
+2MiB_case_base=0x400000 below_2^32=yes
+all_existing_napot_encode_test_bases_below_2^32=yes
+
+Source excerpt:
+    #[test]
+    fn test_encode_decode_napot() {
+        let full_slice = create_pmp_slice(usize::BITS, 0x0);
+        let full_encoded = encode_pmp_addr(&full_slice, Range::NAPOT);
+        assert_eq!(
+            full_encoded,
+            usize::MAX,
+            "NAPOT full address space encode failed"
+        );
+        let full_decoded = decode_pmp_addr(full_encoded, Range::NAPOT);
+        assert_eq!(
+            full_decoded.log2len(),
+            usize::BITS,
+            "NAPOT full address space decode log2len failed"
+        );
+        assert_eq!(
+            full_decoded.start(),
+            0x0,
+            "NAPOT full address space decode start address failed"
+        );
+
+        let log2len_64kb = 16;
+        let pa_lo_64kb = 0x10000;
+        let slice_64kb = create_pmp_slice(log2len_64kb, pa_lo_64kb);
+        let expected_64kb = 0x5FFF;
+        let encoded_64kb = encode_pmp_addr(&slice_64kb, Range::NAPOT);
+        assert_eq!(
+            encoded_64kb, expected_64kb,
+            "NAPOT 64KB region encode failed"
+        );
+        let decoded_64kb = decode_pmp_addr(encoded_64kb, Range::NAPOT);
+        assert_eq!(
+            decoded_64kb.log2len(),
+            log2len_64kb,
+            "NAPOT 64KB region decode log2len failed"
+        );
+        assert_eq!(
+            decoded_64kb.start(),
+            pa_lo_64kb,
+            "NAPOT 64KB region decode start address failed"
+        );
+
+        let log2len_2mb = 21;
+        let pa_lo_2mb = 0x400000;
+        let slice_2mb = create_pmp_slice(log2len_2mb, pa_lo_2mb);
+        let expected_2mb = 0x100000 | ((1usize << 19) - 1) >> 1;
+        let encoded_2mb = encode_pmp_addr(&slice_2mb, Range::NAPOT);
+        assert_eq!(encoded_2mb, expected_2mb, "NAPOT 2MB region encode failed");
+        let decoded_2mb = decode_pmp_addr(encoded_2mb, Range::NAPOT);
+        assert_eq!(
+            decoded_2mb.log2len(),
+            log2len_2mb,
+            "NAPOT 2MB region decode log2len failed"
+        );
+        assert_eq!(
+            decoded_2mb.start(),
+            pa_lo_2mb,
+            "NAPOT 2MB region decode start address failed"
+        );
+    }

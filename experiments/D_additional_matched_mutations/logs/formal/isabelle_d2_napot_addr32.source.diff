@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/formal/SeSBI_PMP_NAPOT.thy.orig	2026-07-11 22:22:27.781128038 +0800
++++ /tmp/sesbi-additional-isabelle.AZH4sV/SeSBI_PMP_NAPOT.thy	2026-07-11 22:25:04.029542322 +0800
+@@ -58,7 +58,7 @@
+ \<close>
+ definition pmp_encode_napot :: "xlenbits \<Rightarrow> nat \<Rightarrow> xlenbits" where
+   "pmp_encode_napot start k =
+-     (let a0 = drop_bit 2 start;
++     (let a0 = drop_bit 2 (ucast (ucast start :: 32 word) :: xlenbits);
+           addrmask = mask (k - 2)          \<comment> \<open>\<open>(1 << (k-2)) - 1\<close>\<close>
+       in (a0 AND NOT addrmask) OR drop_bit 1 addrmask)"
+ 

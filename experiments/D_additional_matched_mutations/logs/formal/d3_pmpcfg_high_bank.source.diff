@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/formal/d3_pmpcfg_high_bank.dfy.orig	2026-07-11 22:22:22.089113521 +0800
++++ /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/formal/d3_pmpcfg_high_bank.dfy	2026-07-11 22:22:22.096113539 +0800
+@@ -16,7 +16,7 @@
+   predicate ValidPmpRegion(base: nat, size: nat) { ValidSize(size) && base % 4 == 0 }
+   function PmpCfgCsrIndex(idx: nat): nat
+     requires ValidPmpIndex(idx)
+-  { if idx < 8 then 0 else 2 }
++  { if idx < 8 then 0 else 0 }
+   function PmpCfgByteOffset(idx: nat): nat
+     requires ValidPmpIndex(idx)
+   { idx % 8 }

@@ -1,0 +1,70 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running unittests src/lib.rs (target/debug/deps/sbi_spec-79ebfcce3a4c1420)
+
+running 27 tests
+test binary::counter_mask::tests::rustsbi_counter_index_mask ... ok
+test binary::counter_mask::tests::rustsbi_counter_mask_non_usize ... ok
+test base::tests::version_ordering ... ok
+test base::tests::version_display ... ok
+test base::tests::version_parse ... ok
+test base::tests::special_versions ... ok
+test binary::hart_mask::tests::rustsbi_hart_mask ... ok
+test binary::hart_mask::tests::rustsbi_hart_mask_non_usize ... ok
+test tests::test_base ... ok
+test binary::sbi_ret::tests::rustsbi_sbi_ret_constructors ... ok
+test tests::test_cppc ... ok
+test tests::test_binary ... ok
+test tests::test_mpxy ... ok
+test tests::test_nacl ... ok
+test binary::hart_mask::tests::rustsbi_hart_ids_iterator ... ok
+test tests::test_dbcn ... ok
+test tests::test_fwft ... ok
+test tests::test_hsm ... ok
+test tests::test_pmu ... ok
+test tests::test_dbtr ... ok
+test tests::test_rfnc ... ok
+test tests::test_sse ... ok
+test tests::test_spi ... ok
+test tests::test_susp ... ok
+test tests::test_srst ... ok
+test tests::test_sta ... ok
+test tests::test_time ... ok
+
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests sbi_spec
+
+running 29 tests
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::and (line 853) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::err (line 558) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::and_then (line 885) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::expect (line 752) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::expect_err (line 802) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_err_and (line 509) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::inspect (line 696) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::inspect_err (line 722) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_err (line 491) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map (line 581) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_ok_and (line 468) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::into_iter (line 1066) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err_unchecked (line 1039) - compile ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map_or_else (line 640) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map_or (line 617) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::or (line 912) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_ok (line 448) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::or_else (line 946) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map_err (line 669) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::ok (line 535) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_unchecked (line 1019) - compile ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap (line 779) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err (line 827) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err (line 821) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_or (line 970) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err_unchecked (line 1045) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_unchecked (line 1013) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_or_else (line 991) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap (line 773) ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+all doctests ran in 0.36s; merged doctests compilation took 0.34s

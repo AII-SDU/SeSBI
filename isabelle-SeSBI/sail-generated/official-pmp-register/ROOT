@@ -1,0 +1,7 @@
+session SeSBI_Official_PMP_Register_Generated = "Sail" +
+  options [document = false]
+  theories
+    "Riscv_extras"
+    "Riscv_extras_fdext"
+    "Rv64d_types"
+    "Rv64d"

@@ -1,0 +1,8 @@
+date_utc=2026-07-11T14:09:06Z
+source=/home/user/sesbi-JSA/SeSBI-code/sbi/sbi_main.c
+source_sha256=7b57908ec423058d4daeb35c8a9bb119ea079456d112e26166d2195e87256e7f
+gcc=riscv64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+qemu=QEMU emulator version 10.1.50
+clean=make V=0 S7_PMP_PROBE=1 PMP_LAYOUT=current clean
+build=make V=0 S7_PMP_PROBE=1 PMP_LAYOUT=current all
+run=timeout 20s qemu-system-riscv64 -nographic -machine virt -m 128M -bios mysbi.bin -device loader,file=benos.bin,addr=0x80200000 -kernel benos.elf

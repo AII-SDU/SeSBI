@@ -1,0 +1,3 @@
+project,tag,injected,expected_hits,actual_hits,build_exit,qemu_exit,boot_marker,snapshot_seen,base_probe_succeeded,pmpaddr1,unchanged_smoke_outcome,explicit_snapshot_oracle,obj_sha_changed,firmware_sha_changed
+sesbi,baseline,no,0,0,0,124,yes,yes,yes,0x20007fff,BASELINE_SMOKE_PASS,PASS,baseline,baseline
+sesbi,matched_napot,yes,1,1,0,124,yes,yes,yes,0x2000ffff,SURVIVED_SMOKE,CAUGHT_MISMATCH,yes,yes

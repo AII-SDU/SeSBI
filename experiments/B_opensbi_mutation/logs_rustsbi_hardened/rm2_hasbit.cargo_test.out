@@ -1,0 +1,54 @@
+   Compiling sbi-spec v0.0.9 (/home/user/sesbi-JSA/rustsbi/library/sbi-spec)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.48s
+     Running unittests src/lib.rs (target/debug/deps/sbi_spec-79ebfcce3a4c1420)
+
+running 27 tests
+test base::tests::version_parse ... ok
+test base::tests::special_versions ... ok
+test binary::counter_mask::tests::rustsbi_counter_mask_non_usize ... ok
+test base::tests::version_display ... ok
+test base::tests::version_ordering ... ok
+test binary::counter_mask::tests::rustsbi_counter_index_mask ... FAILED
+test binary::hart_mask::tests::rustsbi_hart_mask_non_usize ... ok
+test binary::hart_mask::tests::rustsbi_hart_mask ... FAILED
+test binary::sbi_ret::tests::rustsbi_sbi_ret_constructors ... ok
+test tests::test_cppc ... ok
+test tests::test_binary ... ok
+test tests::test_base ... ok
+test tests::test_dbcn ... ok
+test tests::test_dbtr ... ok
+test tests::test_fwft ... ok
+test tests::test_hsm ... ok
+test tests::test_mpxy ... ok
+test tests::test_nacl ... ok
+test tests::test_pmu ... ok
+test tests::test_spi ... ok
+test tests::test_srst ... ok
+test tests::test_sse ... ok
+test tests::test_susp ... ok
+test tests::test_sta ... ok
+test tests::test_time ... ok
+test tests::test_rfnc ... ok
+test binary::hart_mask::tests::rustsbi_hart_ids_iterator ... ok
+
+failures:
+
+---- binary::counter_mask::tests::rustsbi_counter_index_mask stdout ----
+
+thread 'binary::counter_mask::tests::rustsbi_counter_index_mask' (1430029) panicked at library/sbi-spec/src/binary/counter_mask.rs:60:9:
+assertion failed: mask.has_bit(400)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- binary::hart_mask::tests::rustsbi_hart_mask stdout ----
+
+thread 'binary::hart_mask::tests::rustsbi_hart_mask' (1430032) panicked at library/sbi-spec/src/binary/hart_mask.rs:247:9:
+assertion failed: mask.has_bit(400)
+
+
+failures:
+    binary::counter_mask::tests::rustsbi_counter_index_mask
+    binary::hart_mask::tests::rustsbi_hart_mask
+
+test result: FAILED. 25 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p sbi-spec --lib`

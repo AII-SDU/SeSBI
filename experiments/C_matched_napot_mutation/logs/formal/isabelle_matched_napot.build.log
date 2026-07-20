@@ -1,0 +1,22 @@
+Cleaned SeSBI_PMP
+Running SeSBI_PMP ...
+SeSBI_PMP FAILED (see also "isabelle build_log -H Error SeSBI_PMP")
+*** Failed to finish proof (line 181 of "/tmp/sesbi-matched-isabelle.VmD84d/SeSBI_PMP_RawDecode.thy"):
+*** goal (1 subgoal):
+***  1. ⟦k - 3 < 64 ⟶ bit start (Suc (Suc (k - 3))) ⟶ k - 3 < k - 2;
+***      k - 3 < 63 ⟶ ¬ Suc (k - 3) < k - 2⟧
+***     ⟹ k - 3 < 64 ⟶
+***        ¬ k - 3
+***          < k -
+***            2
+*** At command "by" (line 181 of "/tmp/sesbi-matched-isabelle.VmD84d/SeSBI_PMP_RawDecode.thy")
+*** Failed to finish proof (line 156 of "/tmp/sesbi-matched-isabelle.VmD84d/SeSBI_PMP_NAPOT.thy"):
+*** goal (1 subgoal):
+***  1. drop_bit 2 start AND NOT (mask (k - 2)) OR mask (k - 2) =
+***     drop_bit 2 start AND NOT (mask (k - 2)) OR
+***     mask
+***      (k -
+***       3)
+*** At command "by" (line 156 of "/tmp/sesbi-matched-isabelle.VmD84d/SeSBI_PMP_NAPOT.thy")
+Unfinished session(s): SeSBI_PMP
+0:01:15 elapsed time, 0:05:37 cpu time, factor 4.44

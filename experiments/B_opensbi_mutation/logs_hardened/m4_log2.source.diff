@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/B_opensbi_mutation/logs_hardened/m4_log2.sbi_math.c.orig	2026-07-10 15:26:21.447723427 +0800
++++ lib/sbi/sbi_math.c	2026-07-10 15:26:21.450723437 +0800
+@@ -14,7 +14,7 @@
+ 	unsigned long ret = 0;
+ 
+ 	while (ret < __riscv_xlen) {
+-		if (x <= (1UL << ret))
++		if (x < (1UL << ret)) /*MUT-LOG2*/
+ 			break;
+ 		ret++;
+ 	}

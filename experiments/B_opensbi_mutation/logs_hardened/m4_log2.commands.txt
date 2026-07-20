@@ -1,0 +1,6 @@
+make -j8 PLATFORM=generic  # tag=m4_log2
+build_exit=0
+patched_obj=build/lib/sbi/sbi_math.o obj_sha256=3e985827af4b42bba0fb0c1ab4d77b8a3c4b1c99997d08a4a30184f3688cb45b
+fw_dynamic_bin_sha256=cefd8c3860ef4341964e08eae36f0c78dc41642a69647a259232454826b9c086
+timeout 60 qemu-system-riscv64 -M virt -nographic -bios build/platform/generic/firmware/fw_dynamic.bin  # tag=m4_log2
+qemu_exit=124  (124=timeout-kill after tests finish = EXPECTED)

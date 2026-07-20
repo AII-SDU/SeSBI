@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/C_matched_napot_mutation/logs/formal/SeSBI_PMP_NAPOT.thy.orig	2026-07-11 20:47:12.465793354 +0800
++++ /tmp/sesbi-matched-isabelle.VmD84d/SeSBI_PMP_NAPOT.thy	2026-07-11 20:51:33.688842883 +0800
+@@ -60,7 +60,7 @@
+   "pmp_encode_napot start k =
+      (let a0 = drop_bit 2 start;
+           addrmask = mask (k - 2)          \<comment> \<open>\<open>(1 << (k-2)) - 1\<close>\<close>
+-      in (a0 AND NOT addrmask) OR drop_bit 1 addrmask)"
++      in (a0 AND NOT addrmask) OR addrmask)" (*MUT-MATCHED-NAPOT*)
+ 
+ subsection \<open>Easy facts\<close>
+ 

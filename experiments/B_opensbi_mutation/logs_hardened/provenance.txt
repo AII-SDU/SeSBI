@@ -1,0 +1,6 @@
+date_utc            : 2026-07-10T07:22:17Z
+experiment_head     : 98617cfb36619784bfe54f463e39bcda1a7673d1  (enable SBIUNIT for experiment)
+upstream_base_commit: 262571217c75c649115633d8075cb6a40d940733  (lib: utils/mpxy: Add RPMI MPXY driver for logging service group)
+gcc                 : riscv64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+qemu                : QEMU emulator version 6.2.0 (Debian 1:6.2+dfsg-2ubuntu6.28)
+sbiunit_config      : platform/generic/configs/defconfig:CONFIG_SBIUNIT=y

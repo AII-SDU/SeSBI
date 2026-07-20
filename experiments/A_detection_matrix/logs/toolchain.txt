@@ -1,0 +1,5 @@
+date=2026-07-07T06:34:55Z
+dafny=4.11.0
+gcc=11.4.0
+qemu=6.2.0 (paper states 4.2.0 -- version mismatch to reconcile)
+isabelle=Isabelle2025-2 (found at /home/user/Isabelle2025-2, NOT on PATH)

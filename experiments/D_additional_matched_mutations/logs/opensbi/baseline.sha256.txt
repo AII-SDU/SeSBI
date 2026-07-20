@@ -1,0 +1,8 @@
+hart_pmp_object=build/lib/sbi/sbi_hart_pmp.o
+hart_pmp_object_sha256=d3ff943f833fcd94756458f15ea6ce7b0002ccd09763dfdc56b64777c5298fbc
+pmp_object=build/lib/sbi/sbi_pmp.o
+pmp_object_sha256=6ad05bf43d4f4f38bfdf0c39be37b597cf8f17cbcd1c242e43e827fa2fff45fe
+patched_object=-
+patched_object_sha256=n/a
+firmware=build/platform/generic/firmware/fw_dynamic.bin
+firmware_sha256=2c72b3c8db7171b8a3a0342a3d0b0f7375a0350990af259fa3d5360f02b87a5d

@@ -1,0 +1,7 @@
+date=2026-07-07T08:21:11Z
+opensbi_base=2625712 lib: utils/mpxy: Add RPMI MPXY driver for logging service group (SBIUNIT enabled via defconfig for the run)
+gcc=riscv64-linux-gnu-gcc 11.4.0
+qemu=qemu-system-riscv64 6.2.0
+rustsbi_base=2ec490f doc(readme): add security section to README
+rustc=rustc 1.97.0-nightly (4b0c9d76a 2026-05-10)
+rust_toolchain=nightly-2026-05-11

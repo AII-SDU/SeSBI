@@ -1,0 +1,6 @@
+mutation,injected,build,tests_total,tests_failed,verdict
+baseline,no,ok,41,0,MISSED
+m1_napot,yes,ok,41,0,MISSED
+m2_pmpcfg,yes,ok,41,0,MISSED
+m3_mpie,yes,ok,41,0,MISSED
+m4_log2,yes,ok,41,1,CAUGHT

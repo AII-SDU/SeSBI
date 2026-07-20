@@ -1,0 +1,131 @@
+    Updating crates.io index
+    Updating git repository `https://github.com/rustsbi/aclint`
+    Updating git repository `https://github.com/rustsbi/bouffalo-hal`
+    Updating git repository `https://github.com/rustsbi/fast-trap`
+    Updating git repository `https://github.com/rustsbi/serde-device-tree`
+    Updating git repository `https://github.com/duskmoon314/uart-rs/`
+    Updating git repository `https://github.com/duskmoon314/uart-rs/`
+    Updating git repository `https://github.com/rustsbi/xuantie`
+    Updating git repository `https://github.com/rustsbi/serde-device-tree`
+    Updating git repository `https://github.com/arceos-org/arceos.git`
+    Updating git repository `https://github.com/rafalh/rust-fatfs`
+    Updating git repository `https://github.com/rcore-os/smoltcp.git`
+     Locking 224 packages to latest Rust 1.97.0-nightly compatible versions
+      Adding arm-pl011-uart v0.3.2 (available: v0.5.0)
+      Adding axio v0.1.2 (available: v0.2.1)
+      Adding buddy_system_allocator v0.11.0 (available: v0.13.0)
+      Adding crate_interface v0.1.4 (available: v0.3.0)
+      Adding object v0.37.3 (available: v0.39.1)
+      Adding pastey v0.1.1 (available: v0.2.3)
+      Adding rand v0.8.6 (available: v0.10.2)
+      Adding spin v0.9.8 (available: v0.12.1)
+      Adding toml v0.8.23 (available: v1.1.2+spec-1.1.0)
+      Adding uefi-raw v0.11.0 (available: v0.15.0)
+      Adding uguid v2.2.0 (available: v2.2.1)
+ Downloading crates ...
+  Downloaded bitflags v2.13.0
+  Downloaded unicode-ident v1.0.24
+  Downloaded proc-macro2 v1.0.106
+  Downloaded quote v1.0.46
+  Downloaded syn v2.0.118
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.46
+   Compiling bitflags v2.13.0
+   Compiling sbi-spec v0.0.9 (/home/user/sesbi-JSA/rustsbi/library/sbi-spec)
+   Compiling syn v2.0.118
+   Compiling rustsbi-macros v0.0.2 (/home/user/sesbi-JSA/rustsbi/library/macros)
+   Compiling rustsbi v0.4.1 (/home/user/sesbi-JSA/rustsbi/library/rustsbi)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 22.17s
+     Running unittests src/lib.rs (target/debug/deps/rustsbi-80da81d4ff205d62)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-full.rs (target/debug/deps/build_full-01217865afd5d0b6)
+
+running 2 tests
+test generated_extensions ... ok
+test rustsbi_impl_id ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-generics.rs (target/debug/deps/build_generics-ba8fb89dd1a4ddb4)
+
+running 1 test
+test test_impl_id ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-rename.rs (target/debug/deps/build_rename-8e235c184e58a924)
+
+running 2 tests
+test rustsbi_assign_one ... ok
+test rustsbi_assign_multiple ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-skip.rs (target/debug/deps/build_skip-5a81fb33e2bcaf8f)
+
+running 2 tests
+test rustsbi_skip_extension ... ok
+test rustsbi_skip_env_info ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/dynamic-generics.rs (target/debug/deps/dynamic_generics-2f18e743fdf6b390)
+
+running 1 test
+test test_impl_id ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/dynamic-priority.rs (target/debug/deps/dynamic_priority-87fcf21f0c32d013)
+
+running 2 tests
+test priority_multiple_fences ... ok
+test priority_assign_multiple ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forward-struct.rs (target/debug/deps/forward_struct-4405702147884eac)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests rustsbi
+
+running 20 tests
+test library/rustsbi/src/lib.rs - (line 206) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 266) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 433) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 73) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 401) ... ok
+test library/rustsbi/src/forward.rs - forward::Forward (line 22) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1028) ... ok
+test library/rustsbi/src/lib.rs - (line 156) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1112) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 619) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 597) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1060) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1090) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 864) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 784) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 727) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 987) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 687) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 918) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 956) ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+running 2 tests
+test library/rustsbi/src/lib.rs - RustSBI (line 633) - compile fail ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 892) - compile fail ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+all doctests ran in 0.35s; merged doctests compilation took 0.30s

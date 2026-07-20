@@ -1,0 +1,22 @@
+experiments/D_additional_matched_mutations/logs/formal/d3_pmpcfg_high_bank.dfy(41,2): Error: a postcondition could not be proved on this return path
+   |
+41 |   {
+   |   ^
+
+experiments/D_additional_matched_mutations/logs/formal/d3_pmpcfg_high_bank.dfy(40,32): Related location: this is the postcondition that could not be proved
+   |
+40 |     ensures PmpCfgCsrIndex(idx) == 2
+   |                                 ^^
+
+experiments/D_additional_matched_mutations/logs/formal/d3_pmpcfg_high_bank.dfy(236,2): Error: a postcondition could not be proved on this return path
+    |
+236 |   {
+    |   ^
+
+experiments/D_additional_matched_mutations/logs/formal/d3_pmpcfg_high_bank.dfy(235,32): Related location: this is the postcondition that could not be proved
+    |
+235 |     ensures PmpCfgCsrIndex(idx) == 2 && PmpCfgByteOffset(idx) == idx - 8
+    |                                 ^^
+
+
+Dafny program verifier finished with 306 verified, 2 errors

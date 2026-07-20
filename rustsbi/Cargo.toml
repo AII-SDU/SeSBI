@@ -1,0 +1,43 @@
+[workspace]
+resolver = "3"
+members = [
+    "library/macros",
+    "library/sbi-rt",
+    "library/sbi-spec",
+    "library/sbi-testing",
+    "library/rustsbi",
+    "library/riscv-aia",
+    "library/riscv-cove",
+    "library/riscv-cove-rt",
+    "library/penglai",
+    "library/pmpm",
+    "library/smm",
+    "prototyper/prototyper",
+    "prototyper/bench-kernel",
+    "prototyper/test-kernel",
+    "arceboot",
+    "xtask",
+]
+default-members = [
+    "library/macros",
+    "library/sbi-rt",
+    "library/sbi-spec",
+    "library/rustsbi",
+    "library/riscv-aia",
+    "library/riscv-cove",
+    "library/penglai",
+    "library/pmpm"
+]
+
+[workspace.package]
+edition = "2024"
+license = "MulanPSL-2.0 OR MIT"
+repository = "https://github.com/rustsbi/rustsbi"
+
+[profile.release]
+debug = true
+
+[workspace.dependencies]
+riscv = { version = "0.16.0", default-features = false }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/B_opensbi_mutation/logs_rustsbi_hardened/rm1_pmp.mod.rs.orig	2026-07-10 16:08:41.993267571 +0800
++++ prototyper/prototyper/src/firmware/mod.rs	2026-07-10 16:08:41.996267591 +0800
+@@ -543,7 +543,7 @@
+             pmpaddr0::write(0);
+             pmpcfg0::set_pmp(1, Range::TOR, Permission::RWX, false);
+             pmpaddr1::write(clint_base >> 2);
+-            pmpcfg0::set_pmp(2, Range::TOR, Permission::NONE, false);
++            pmpcfg0::set_pmp(2, Range::TOR, Permission::RWX, false); /*MUT-PMP-ISOLATION*/
+             pmpaddr2::write(clint_end >> 2);
+             pmpcfg0::set_pmp(3, Range::TOR, Permission::RWX, false);
+             pmpaddr3::write(aplic_base >> 2);

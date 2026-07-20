@@ -1,0 +1,7 @@
+cargo test --no-fail-fast
+build_exit=0
+cargo_exit=0
+parsed_passed=209
+parsed_failed=0
+parsed_total=209
+pmpm_test_binary_sha256=5096dc8791d7f9d3f267d4d334e32bbb6fcaf2ff2f79dde336c31419deae25b1

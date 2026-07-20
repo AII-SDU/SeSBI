@@ -1,0 +1,4 @@
+62c62
+< 			pmp->addr |= (addrmask >> 1);
+---
+> 			pmp->addr |= addrmask; /*MUT-NAPOT*/

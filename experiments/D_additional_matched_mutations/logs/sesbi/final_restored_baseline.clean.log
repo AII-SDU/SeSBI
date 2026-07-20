@@ -1,0 +1,3 @@
+make: 进入目录“/home/user/sesbi-JSA/SeSBI-code”
+rm -rf build  *.bin  *.map *.elf
+make: 离开目录“/home/user/sesbi-JSA/SeSBI-code”

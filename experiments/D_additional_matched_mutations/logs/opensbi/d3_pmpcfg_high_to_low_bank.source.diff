@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/opensbi/d3_pmpcfg_high_to_low_bank.sbi_hart_pmp.c.orig	2026-07-11 22:25:05.874547377 +0800
++++ lib/sbi/sbi_hart_pmp.c	2026-07-11 22:25:05.876547383 +0800
+@@ -58,7 +58,7 @@
+ 	pmpcfg_csr   = CSR_PMPCFG0 + (n >> 2);
+ 	pmpcfg_shift = (n & 3) << 3;
+ #elif __riscv_xlen == 64
+-	pmpcfg_csr   = (CSR_PMPCFG0 + (n >> 2)) & ~1;
++	pmpcfg_csr   = (CSR_PMPCFG0 + (n >> 3)) & ~1; /*MUT-D3-PMPCFG-BANK*/
+ 	pmpcfg_shift = (n & 7) << 3;
+ #else
+ # error "Unexpected __riscv_xlen"

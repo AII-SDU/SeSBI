@@ -1,0 +1,6 @@
+date_utc          : 2026-07-10T08:08:39Z
+rustsbi_head      : 2ec490f7a412be79edd677f08f3f93d12a91adfa  (doc(readme): add security section to README)
+rustc             : rustc 1.97.0-nightly (4b0c9d76a 2026-05-10)
+cargo             : cargo 1.97.0-nightly (a343accce 2026-05-08)
+default_members   : macros sbi-rt sbi-spec rustsbi riscv-aia riscv-cove penglai pmpm
+prototyper_in_set : no

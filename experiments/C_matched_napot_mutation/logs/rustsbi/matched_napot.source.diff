@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/C_matched_napot_mutation/logs/rustsbi/matched_napot.pmpm_lib.rs.orig	2026-07-11 21:06:18.928418984 +0800
++++ library/pmpm/src/lib.rs	2026-07-11 21:06:18.932418986 +0800
+@@ -99,7 +99,7 @@
+             } else {
+                 let addrmask = (1usize << (log2len - PMP_SHIFT)) - 1;
+                 addr = (addr >> PMP_SHIFT) & !addrmask;
+-                addr | (addrmask >> 1)
++                addr | addrmask /*MUT-MATCHED-NAPOT*/
+             }
+         }
+         Range::NA4 => addr >> PMP_SHIFT,

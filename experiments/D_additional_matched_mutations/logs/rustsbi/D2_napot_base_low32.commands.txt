@@ -1,0 +1,17 @@
+build_command=cargo test --no-run --no-fail-fast
+build_exit=0
+test_command=cargo test --no-fail-fast
+cargo_exit=0
+parsed_passed=209
+parsed_failed=0
+parsed_total=209
+baseline_total=209
+baseline_total_equal=yes
+pmpm_rlib_sha256=3bc88c36e0ac09c9e297e894e1f40449eb10a785d24c668c35b556547c9c9e77
+pmpm_rlib_sha_changed=yes
+pmpm_test_binary_sha256=8bf6aa76ba76703eaeca9e92a8074ec88437c856c3d79798e9d30e5f75b94290
+pmpm_test_binary_sha_changed=yes
+setter_or_getter_calls_inside_pmpm_tests=0
+d2_existing_napot_test_bases_below_2^32=yes
+completed=yes
+outcome=SURVIVED_NONTRIGGERING_INPUT

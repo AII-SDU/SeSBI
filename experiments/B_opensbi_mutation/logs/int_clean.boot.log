@@ -1,0 +1,2 @@
+/home/user/test/buildroot-2023.02.1/boot/Image: No such file or directory
+qemu-system-riscv64: could not load kernel '/home/user/test/buildroot-2023.02.1/boot/Image'

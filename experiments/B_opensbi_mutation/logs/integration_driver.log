@@ -1,0 +1,8 @@
+===== CLEAN (instrumented, no bug) =====
+clean: pmpenc_prints=0 linux_progress=0 panic_markers=0
+--- clean PMPENC lines ---
+===== NAPOT BUG (instrumented + injected) =====
+injected OK
+napot: pmpenc_prints=0 linux_progress=0 panic_markers=0
+--- napot PMPENC lines ---
+restored; done

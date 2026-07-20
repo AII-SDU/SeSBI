@@ -1,0 +1,26 @@
+session SeSBI_PMP = "HOL-Library" +
+  options [document = false]
+  theories
+    Scratch
+    security
+    SeSBI_PMP_Global
+    SeSBI_PMP_NAPOT
+    SeSBI_PMP_Conformance
+    SeSBI_PMP_Isolation
+    SeSBI_PMP_BootConfig
+    SeSBI_PMP_CfgPack
+    SeSBI_PMP_Banked
+    SeSBI_PMP_Mstatus
+    SeSBI_PMP_Mstatus_Omission
+    SeSBI_PMP_BootSequence
+    SeSBI_Startup_Base
+    SeSBI_Startup_Frame
+    SeSBI_Timer_Frame
+    SeSBI_Timer_ColdInit
+    SeSBI_Console_Frame
+    SeSBI_Trap_Frame
+    SeSBI_PMP_Frame
+    SeSBI_PMP_CheckScope
+    SeSBI_PMP_RawDecode
+    SeSBI_PMP_RawTable
+    SeSBI_PMP_OfficialBody

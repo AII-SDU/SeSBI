@@ -1,0 +1,103 @@
+variable RMEM = false
+
+prelude {
+  files
+    ../../../../../tmp/sailriscvmodel/prelude/prelude.sail,
+    ../../../../../tmp/sailriscvmodel/prelude/errors.sail,
+}
+
+extensions {
+  requires prelude
+
+  A {
+    A_types {
+      files ../../../../../tmp/sailriscvmodel/extensions/A/aext_types.sail
+    }
+  }
+
+  Zicbom {
+    Zicbom_types {
+      files ../../../../../tmp/sailriscvmodel/extensions/Zicbom/zicbom_types.sail
+    }
+  }
+
+  Zicbop {
+    Zicbop_types {
+      before core
+      files ../../../../../tmp/sailriscvmodel/extensions/Zicbop/zicbop_types.sail
+    }
+  }
+
+  Zibi {
+    Zibi_types {
+      before core
+      files ../../../../../tmp/sailriscvmodel/extensions/Zibi/zibi_types.sail
+    }
+  }
+
+  pointer_masking {
+    PM_types {
+      files ../../../../../tmp/sailriscvmodel/extensions/pointer_masking/pm_types.sail
+    }
+  }
+}
+
+core {
+  requires prelude, A_types, Zicbop_types, Zicbom_types, PM_types
+
+  files
+    ../../../../../tmp/sailriscvmodel/core/isa_version.sail,
+    ../../../../../tmp/sailriscvmodel/core/xlen.sail,
+    ../../../../../tmp/sailriscvmodel/core/flen.sail,
+    ../../../../../tmp/sailriscvmodel/core/vlen.sail,
+    ../../../../../tmp/sailriscvmodel/core/mem_addrtype.sail,
+    ../../../../../tmp/sailriscvmodel/core/mem_metadata.sail,
+    ../../../../../tmp/sailriscvmodel/core/phys_mem_interface.sail,
+    ../../../../../tmp/sailriscvmodel/core/arithmetic.sail,
+    ../../../../../tmp/sailriscvmodel/core/range_util.sail,
+    ../../../../../tmp/sailriscvmodel/core/float_classify.sail,
+    ../../../../../tmp/sailriscvmodel/core/rvfi_dii.sail,
+    ../../../../../tmp/sailriscvmodel/core/rvfi_dii_v1.sail,
+    ../../../../../tmp/sailriscvmodel/core/rvfi_dii_v2.sail,
+    ../../../../../tmp/sailriscvmodel/core/platform_config.sail,
+    ../../../../../tmp/sailriscvmodel/core/extensions.sail,
+    ../../../../../tmp/sailriscvmodel/core/types_common.sail,
+    ../../../../../tmp/sailriscvmodel/core/types_ext.sail,
+    ../../../../../tmp/sailriscvmodel/core/types.sail,
+    ../../../../../tmp/sailriscvmodel/core/vmem_types.sail,
+    ../../../../../tmp/sailriscvmodel/core/mem_type_utils.sail,
+    ../../../../../tmp/sailriscvmodel/core/csr_begin.sail,
+    ../../../../../tmp/sailriscvmodel/core/callbacks.sail,
+    ../../../../../tmp/sailriscvmodel/core/reg_type.sail,
+    ../../../../../tmp/sailriscvmodel/core/regs.sail,
+    ../../../../../tmp/sailriscvmodel/core/pc_access.sail,
+    ../../../../../tmp/sailriscvmodel/core/sys_regs.sail,
+    ../../../../../tmp/sailriscvmodel/core/ext_regs.sail,
+    ../../../../../tmp/sailriscvmodel/core/interrupt_regs.sail,
+    ../../../../../tmp/sailriscvmodel/core/addr_checks_common.sail,
+    ../../../../../tmp/sailriscvmodel/core/addr_checks.sail,
+    ../../../../../tmp/sailriscvmodel/core/misa_ext.sail,
+    ../../../../../tmp/sailriscvmodel/core/softfloat_interface.sail,
+}
+
+exceptions {
+  requires prelude, core
+
+  files
+    ../../../../../tmp/sailriscvmodel/exceptions/sys_exceptions.sail,
+    ../../../../../tmp/sailriscvmodel/exceptions/sync_exception.sail,
+}
+
+pmp {
+  requires prelude, core, Zicbop_types
+
+  files
+    ../../../../../tmp/sailriscvmodel/pmp/pmp_regs.sail,
+    ../../../../../tmp/sailriscvmodel/pmp/pmp_control.sail,
+}
+
+sig_regs {
+  requires prelude, core
+
+  files ../../../../../tmp/sailriscvmodel/sys/simple_interrupt_generator_regs.sail
+}

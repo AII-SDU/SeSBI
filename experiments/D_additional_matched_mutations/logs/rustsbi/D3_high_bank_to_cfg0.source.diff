@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/rustsbi/pmpm_lib.rs.clean	2026-07-11 22:09:27.348547073 +0800
++++ /home/user/sesbi-JSA/rustsbi/library/pmpm/src/lib.rs	2026-07-11 22:09:32.844567175 +0800
+@@ -134,7 +134,7 @@
+     unsafe {
+         match idx {
+             0..=7 => pmpcfg0::set_pmp(cfg_idx, config.range, config.perm, config.is_locked),
+-            8..=15 => pmpcfg2::set_pmp(cfg_idx, config.range, config.perm, config.is_locked),
++            8..=15 => pmpcfg0::set_pmp/*MUT-D3-HIGH-BANK-TO-CFG0*/(cfg_idx, config.range, config.perm, config.is_locked),
+             _ => panic!("Invalid PMP index for cfg"),
+         }
+     }

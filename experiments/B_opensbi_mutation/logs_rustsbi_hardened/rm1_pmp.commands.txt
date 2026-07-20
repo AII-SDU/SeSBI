@@ -1,0 +1,3 @@
+cargo test   # tag=rm1_pmp
+cargo_test_exit=0
+parsed passed=209 failed=0 total=209 completed=yes

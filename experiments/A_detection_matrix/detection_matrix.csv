@@ -1,0 +1,5 @@
+bug,paper_component,paper_detection,trigger_input,formal_side_result,functional_suite_result,boundary_input_needed
+NAPOT encoding off-by-one,PMP,Dafny NapotMask harness,base=0x80000000 log2=18,CAUGHT (Dafny harness): NapotMask lemma fails 1 err; §5.4.1 correctness is Isabelle napot_interval_correct,MISSED: in-region allow checks identical,addr = base + 2^18 (just past end)
+pmpcfg byte offset,PMP,Isabelle proof,reg_idx byte pos %8 -> %4,CAUGHT (Isabelle): cfg_byte_write_target+frame fail; ALSO caught in Dafny model (2 err),CAUGHT: entries 0..7 diverge at idx>=4,idx>=4 (refines paper 'entries 8-15')
+mstatus MPIE bit position,Trap,Isabelle proof,MPIE bit 7 -> 6,CAUGHT (Isabelle): MPIE_lowbit+mpie_set+mpie_frame fail,MISSED: MPP==S check identical,observe MPIE bit after mret setup
+timer comparison signedness,Timer,Targeted C test,cmp=0x8000000000000010 now=0x7ffffffffffffff0,NOT INJECTABLE: Dafny timer model over unbounded nat (no sign),MISSED: deadlines < 2^63 identical,cmp > 2^63 (signed/unsigned diverge)

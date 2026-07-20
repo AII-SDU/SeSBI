@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/B_opensbi_mutation/logs_rustsbi_hardened/rm2_hasbit.mask_commons.rs.orig	2026-07-10 16:08:44.136282144 +0800
++++ library/sbi-spec/src/binary/mask_commons.rs	2026-07-10 16:08:44.139282164 +0800
+@@ -31,7 +31,7 @@
+         false
+     } else {
+         // index is in range, check if it is set in the mask.
+-        mask & (1 << (bit - base)) != 0
++        mask & (1 << (bit - base)) == 0 /*MUT-HASBIT*/
+     }
+ }
+ 

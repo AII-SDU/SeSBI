@@ -1,0 +1,20 @@
+RustSBI default-test setter reachability audit
+target=library/pmpm/src/lib.rs
+test_module_line=248
+setter_or_getter_calls_inside_test_module=0
+
+All RustSBI source references:
+./library/smm/src/protector.rs:98:            && set_pmp_entry_sync(
+./library/smm/src/protector.rs:107:            && set_pmp_entry_sync(
+./library/smm/src/protector.rs:116:            && set_pmp_entry(
+./library/smm/src/protector.rs:125:            && set_pmp_entry(
+./library/smm/src/protector.rs:134:            && set_pmp_entry_sync(
+./library/smm/src/protector.rs:143:            && set_pmp_entry_sync(
+./library/pmpm/src/lib.rs:132:pub fn set_pmp_cfg(idx: u32, config: &PmpConfig) {
+./library/pmpm/src/lib.rs:168:pub fn set_pmp_entry_sync(idx: u32, addr: usize, len: usize, config: &PmpConfig) -> bool {
+./library/pmpm/src/lib.rs:169:    set_pmp_entry(idx, addr, len, config)
+./library/pmpm/src/lib.rs:172:pub fn set_pmp_entry(idx: u32, addr: usize, len: usize, config: &PmpConfig) -> bool {
+./library/pmpm/src/lib.rs:185:        set_pmp_cfg(idx, config);
+./library/pmpm/src/lib.rs:229:pub fn get_pmp_cfg(idx: u32) -> PmpConfig {
+./library/pmpm/src/lib.rs:243:pub fn get_pmp_entry(idx: u32) -> (usize, PmpConfig) {
+./library/pmpm/src/lib.rs:244:    (_get_pmp_addr(idx), get_pmp_cfg(idx))

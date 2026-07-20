@@ -1,0 +1,61 @@
+Firmware Heap Size          : 37 KB (total), 0 KB (reserved), 11 KB (used), 24 KB (free)
+Firmware Scratch Size       : 4096 B (total), 496 B (used), 3600 B (free)
+## Running test suite: atomic_test_suite
+[PASSED] atomic_rw_test
+[PASSED] add_return_test
+[PASSED] sub_return_test
+[PASSED] cmpxchg_test
+[PASSED] atomic_xchg_test
+[PASSED] atomic_raw_set_bit_test
+[PASSED] atomic_raw_clear_bit_test
+[PASSED] atomic_set_bit_test
+[PASSED] atomic_clear_bit_test
+9 PASSED / 0 FAILED / 9 TOTAL
+## Running test suite: string_test_suite
+[PASSED] string_strcmp_test
+[PASSED] string_strncmp_test
+[PASSED] string_strlen_test
+[PASSED] string_strnlen_test
+[PASSED] string_strcpy_test
+[PASSED] string_strncpy_test
+[PASSED] string_strchr_test
+[PASSED] string_strrchr_test
+[PASSED] memory_memset_test
+[PASSED] memory_memcpy_test
+[PASSED] memory_memmove_test
+[PASSED] memory_memcmp_test
+[PASSED] memory_memchr_test
+13 PASSED / 0 FAILED / 13 TOTAL
+## Running test suite: ecall_test_suite
+[PASSED] test_sbi_ecall_version
+[PASSED] test_sbi_ecall_impid
+[PASSED] test_sbi_ecall_register_find_extension
+3 PASSED / 0 FAILED / 3 TOTAL
+## Running test suite: math_test_suite
+[PASSED] log2roundup_test
+1 PASSED / 0 FAILED / 1 TOTAL
+## Running test suite: console_test_suite
+[PASSED] putc_test
+[PASSED] puts_test
+[PASSED] printf_test
+3 PASSED / 0 FAILED / 3 TOTAL
+## Running test suite: bitmap_test_suite
+[PASSED] bitmap_and_test
+[PASSED] bitmap_or_test
+[PASSED] bitmap_xor_test
+[PASSED] bitmap_empty_test
+4 PASSED / 0 FAILED / 4 TOTAL
+## Running test suite: locks_test_suite
+[PASSED] spin_lock_test
+[PASSED] spin_trylock_fail
+[PASSED] spin_trylock_success
+3 PASSED / 0 FAILED / 3 TOTAL
+## Running test suite: bitops_test_suite
+[PASSED] find_first_bit_test
+[PASSED] find_first_zero_bit_test
+[PASSED] find_last_bit_test
+[PASSED] find_next_bit_test
+[PASSED] find_next_zero_bit_test
+5 PASSED / 0 FAILED / 5 TOTAL
+system_opcode_insn: Failed to access CSR 0x302 from M-mode
+sbi_trap_error: hart0: trap0: illegal instruction handler failed (error -1)

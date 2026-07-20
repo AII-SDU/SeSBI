@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/opensbi/d2_napot_base_low32.sbi_pmp.c.orig	2026-07-11 22:24:03.182377603 +0800
++++ lib/sbi/sbi_pmp.c	2026-07-11 22:24:03.184377608 +0800
+@@ -58,7 +58,7 @@
+ 		} else {
+ 			unsigned long addrmask;
+ 			addrmask = (1UL << (log2len - PMP_SHIFT)) - 1;
+-			pmp->addr = ((addr >> PMP_SHIFT) & ~addrmask);
++			pmp->addr = (((addr & 0xffffffffUL) >> PMP_SHIFT) & ~addrmask); /*MUT-D2-NAPOT-LOW32*/
+ 			pmp->addr |= (addrmask >> 1);
+ 		}
+ 	}

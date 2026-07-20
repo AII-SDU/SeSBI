@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/opensbi/d1_pmpcfg_byte_fold.sbi_hart_pmp.c.orig	2026-07-11 22:23:00.531212415 +0800
++++ lib/sbi/sbi_hart_pmp.c	2026-07-11 22:23:00.535212425 +0800
+@@ -59,7 +59,7 @@
+ 	pmpcfg_shift = (n & 3) << 3;
+ #elif __riscv_xlen == 64
+ 	pmpcfg_csr   = (CSR_PMPCFG0 + (n >> 2)) & ~1;
+-	pmpcfg_shift = (n & 7) << 3;
++	pmpcfg_shift = (n & 3) << 3; /*MUT-D1-PMPCFG-BYTE*/
+ #else
+ # error "Unexpected __riscv_xlen"
+ #endif

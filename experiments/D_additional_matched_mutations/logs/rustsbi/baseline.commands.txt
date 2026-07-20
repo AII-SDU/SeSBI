@@ -1,0 +1,17 @@
+build_command=cargo test --no-run --no-fail-fast
+build_exit=0
+test_command=cargo test --no-fail-fast
+cargo_exit=0
+parsed_passed=209
+parsed_failed=0
+parsed_total=209
+baseline_total=209
+baseline_total_equal=baseline
+pmpm_rlib_sha256=c41138c82f22cd07ba0c3718c533c46ddff228caa3c94d729c3ce5aa45b28b1f
+pmpm_rlib_sha_changed=baseline
+pmpm_test_binary_sha256=5096dc8791d7f9d3f267d4d334e32bbb6fcaf2ff2f79dde336c31419deae25b1
+pmpm_test_binary_sha_changed=baseline
+setter_or_getter_calls_inside_pmpm_tests=0
+d2_existing_napot_test_bases_below_2^32=n/a
+completed=yes
+outcome=BASELINE

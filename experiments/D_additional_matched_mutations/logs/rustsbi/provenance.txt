@@ -1,0 +1,10 @@
+date_utc=2026-07-11T14:09:27Z
+rustsbi_head=2ec490f7a412be79edd677f08f3f93d12a91adfa
+target=library/pmpm/src/lib.rs
+target_clean_sha256=92cbd9128157331f81927c597f47bbc261e9cececc5ac85c074b05410008ab4f
+rustc=rustc 1.97.0-nightly (4b0c9d76a 2026-05-10)
+cargo=cargo 1.97.0-nightly (a343accce 2026-05-08)
+default_members=macros sbi-rt sbi-spec rustsbi riscv-aia riscv-cove penglai pmpm
+pmpm_in_default_members=yes
+setter_or_getter_calls_inside_pmpm_tests=0
+d2_existing_napot_test_bases_below_2^32=yes

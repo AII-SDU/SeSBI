@@ -1,0 +1,5 @@
+system,tag,paired_semantic_mutation,command_exit,verified_obligations,errors,outcome
+dafny,baseline,no,0,308,0,PASS
+dafny,matched_napot,yes,4,307,1,CAUGHT
+isabelle,baseline,no,0,0,0,PASS
+isabelle,matched_napot,yes,1,0,2,CAUGHT

@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/B_opensbi_mutation/logs_hardened/m1_napot.sbi_pmp.c.orig	2026-07-10 15:23:18.375082843 +0800
++++ lib/sbi/sbi_pmp.c	2026-07-10 15:23:18.378082853 +0800
+@@ -59,7 +59,7 @@
+ 			unsigned long addrmask;
+ 			addrmask = (1UL << (log2len - PMP_SHIFT)) - 1;
+ 			pmp->addr = ((addr >> PMP_SHIFT) & ~addrmask);
+-			pmp->addr |= (addrmask >> 1);
++			pmp->addr |= addrmask; /*MUT-NAPOT*/
+ 		}
+ 	}
+ 

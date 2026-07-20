@@ -1,0 +1,83 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test rustsbi_impl_id ... ok
+test generated_extensions ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test test_impl_id ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test rustsbi_assign_multiple ... ok
+test rustsbi_assign_one ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test rustsbi_skip_env_info ... ok
+test rustsbi_skip_extension ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test test_impl_id ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test priority_multiple_fences ... ok
+test priority_assign_multiple ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 20 tests
+test library/rustsbi/src/lib.rs - (line 206) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 266) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 73) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 433) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 156) ... ok
+test library/rustsbi/src/forward.rs - forward::Forward (line 22) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1060) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1028) ... ok
+test library/rustsbi/src/lib.rs - (line 401) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1090) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 727) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 619) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1112) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 918) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 987) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 784) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 864) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 687) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 597) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 956) ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+running 2 tests
+test library/rustsbi/src/lib.rs - RustSBI (line 633) - compile fail ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 892) - compile fail ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+all doctests ran in 0.37s; merged doctests compilation took 0.31s

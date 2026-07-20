@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/C_matched_napot_mutation/logs/opensbi/matched_napot.sbi_pmp.c.orig	2026-07-11 20:42:50.978685606 +0800
++++ lib/sbi/sbi_pmp.c	2026-07-11 20:42:50.980685615 +0800
+@@ -59,7 +59,7 @@
+ 			unsigned long addrmask;
+ 			addrmask = (1UL << (log2len - PMP_SHIFT)) - 1;
+ 			pmp->addr = ((addr >> PMP_SHIFT) & ~addrmask);
+-			pmp->addr |= (addrmask >> 1);
++			pmp->addr |= addrmask; /*MUT-MATCHED-NAPOT*/
+ 		}
+ 	}
+ 

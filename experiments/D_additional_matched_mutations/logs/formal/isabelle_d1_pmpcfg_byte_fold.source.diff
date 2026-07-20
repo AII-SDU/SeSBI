@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/formal/SeSBI_PMP_CfgPack.thy.orig	2026-07-11 22:22:27.780128036 +0800
++++ /tmp/sesbi-additional-isabelle.AZH4sV/SeSBI_PMP_CfgPack.thy	2026-07-11 22:23:48.077337346 +0800
+@@ -30,7 +30,7 @@
+ 
+ definition pmpcfg_write :: "64 word \<Rightarrow> nat \<Rightarrow> 8 word \<Rightarrow> 64 word" where
+   "pmpcfg_write old i new =
+-     (old AND cfgmask i) OR (push_bit (i * 8) (ucast new) AND NOT (cfgmask i))"
++     (old AND cfgmask (i mod 4)) OR (push_bit ((i mod 4) * 8) (ucast new) AND NOT (cfgmask (i mod 4)))"
+ 
+ text \<open>The cfg byte of entry \<open>j\<close>: low 8 bits of \<open>pmpcfg >> (j*8)\<close>.\<close>
+ definition cfg_byte :: "64 word \<Rightarrow> nat \<Rightarrow> 8 word" where

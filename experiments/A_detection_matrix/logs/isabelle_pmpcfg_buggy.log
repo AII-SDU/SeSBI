@@ -1,0 +1,22 @@
+Cleaned SeSBI_PMP
+Running SeSBI_PMP ...
+SeSBI_PMP FAILED (see also "isabelle build_log -H Error SeSBI_PMP")
+*** Failed to finish proof (line 83 of "~/sesbi-JSA/isabelle-SeSBI/SeSBI_PMP_CfgPack.thy"):
+*** goal (1 subgoal):
+***  1. ⟦i * 8 ≤ j * 8 + m ⟶ ¬ j * 8 + m - i * 8 < 8; j * 8 + m < 64⟧
+***     ⟹ j * 8 + m - i mod 4 * 8 < 64 ⟶
+***        i mod 4 * 8 ≤ j * 8 + m ⟶
+***        ¬ j * 8 + m - i mod 4 * 8
+***          < 8
+*** At command "by" (line 83 of "~/sesbi-JSA/isabelle-SeSBI/SeSBI_PMP_CfgPack.thy")
+*** Failed to apply initial proof method (line 63 of "~/sesbi-JSA/isabelle-SeSBI/SeSBI_PMP_CfgPack.thy"):
+*** using this:
+***     i < 8
+***     m < 8
+*** goal (1 subgoal):
+***  1. bit (pmpcfg_write old i new) (i * 8 + m) =
+***     bit new
+***      m
+*** At command "by" (line 63 of "~/sesbi-JSA/isabelle-SeSBI/SeSBI_PMP_CfgPack.thy")
+Unfinished session(s): SeSBI_PMP
+0:01:14 elapsed time, 0:05:45 cpu time, factor 4.62

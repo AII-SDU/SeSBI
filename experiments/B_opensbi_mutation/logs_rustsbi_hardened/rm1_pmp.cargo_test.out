@@ -1,0 +1,356 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running unittests src/lib.rs (target/debug/deps/penglai-9f11ef6edd35acdf)
+
+running 2 tests
+test tests::test_penglai_enclave ... ok
+test tests::test_penglai_host ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/pmpm-b6eb8e5b890b79ac)
+
+running 11 tests
+test bitmap::tests::test_free_errors ... ok
+test tests::test_encode_decode_na4 ... ok
+test tests::test_encode_decode_tor ... ok
+test tests::test_encode_decode_napot ... ok
+test bitmap::tests::test_is_alloc ... ok
+test bitmap::tests::test_no_free_slot_and_limit ... ok
+test tests::test_check_pmp_area_available ... ok
+test tests::test_encode_decode_off ... ok
+test tests::test_pmp_config ... ok
+test tests::test_pmp_slice ... ok
+test bitmap::tests::test_init_and_basic_alloc ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/riscv_aia-9bdb283e770b4dbb)
+
+running 101 tests
+test geilen::tests::geilen_constants ... ok
+test geilen::tests::geilen_default ... ok
+test geilen::tests::geilen_guest_files ... ok
+test geilen::tests::geilen_invalid_count - should panic ... ok
+test peripheral::aplic::clear_int_pending_tests::test_clear_int_pending ... ok
+test peripheral::aplic::clear_int_enable_tests::test_clear_int_enable ... ok
+test peripheral::aplic::domain_config_tests::test_domain_config_big_endian ... ok
+test peripheral::aplic::domain_config_tests::test_domain_config_delivery_mode ... ok
+test peripheral::aplic::domain_config_tests::test_domain_config_delivery_mode_out_of_range - should panic ... ok
+test peripheral::aplic::domain_config_tests::test_domain_config_read_only ... ok
+test peripheral::aplic::domain_config_tests::test_domain_config_interrupt_enable ... ok
+test peripheral::aplic::generate_msi_tests::test_generate_msi_busy ... ok
+test peripheral::aplic::generate_msi_tests::test_generate_msi_eiid ... ok
+test peripheral::aplic::generate_msi_tests::test_generate_msi_hart_index ... ok
+test peripheral::aplic::generate_msi_tests::test_generate_msi_eiid_out_of_range - should panic ... ok
+test peripheral::aplic::generate_msi_tests::test_generate_msi_hart_index_out_of_range - should panic ... ok
+test peripheral::aplic::int_target_tests::test_int_target_guest_index ... ok
+test peripheral::aplic::int_target_tests::test_int_target_guest_index_out_of_range - should panic ... ok
+test peripheral::aplic::int_target_tests::test_int_target_eiid ... ok
+test peripheral::aplic::int_target_tests::test_int_target_eiid_out_of_range - should panic ... ok
+test peripheral::aplic::int_target_tests::test_int_target_hart_index ... ok
+test peripheral::aplic::int_target_tests::test_int_target_iprio ... ok
+test peripheral::aplic::int_target_tests::test_int_target_hart_index_out_of_range - should panic ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_high_base_ppn ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_high_hart_index_shift ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_high_base_ppn_out_of_range - should panic ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_high_hart_index_shift_out_of_range - should panic ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_high_hart_index_width ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_lock ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_low_hart_index_shift_out_of_range - should panic ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_low_hart_index_shift ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_high_hart_index_width_out_of_range - should panic ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_low_hart_index_width_out_of_range - should panic ... ok
+test peripheral::aplic::machine_msi_addr_cfg_h_tests::test_machine_msi_addr_cfg_h_low_hart_index_width ... ok
+test peripheral::aplic::source_config_tests::test_source_config_child_index ... ok
+test peripheral::aplic::source_config_tests::test_source_config_delegate ... ok
+test peripheral::aplic::source_config_tests::test_source_config_source_mode ... ok
+test peripheral::aplic::source_config_tests::test_source_config_child_index_out_of_range - should panic ... ok
+test peripheral::aplic::set_int_pending_tests::test_set_int_pending ... ok
+test peripheral::aplic::set_int_enable_tests::test_set_int_enable ... ok
+test peripheral::aplic::source_config_tests::test_source_config_source_mode_out_of_range - should panic ... ok
+test peripheral::aplic::supervisor_msi_addr_cfg_h_tests::test_supervisor_msi_addr_cfg_h_high_base_ppn ... ok
+test peripheral::aplic::supervisor_msi_addr_cfg_h_tests::test_supervisor_msi_addr_cfg_h_high_base_ppn_out_of_range - should panic ... ok
+test peripheral::aplic::supervisor_msi_addr_cfg_h_tests::test_supervisor_msi_addr_cfg_h_low_hart_index_shift ... ok
+test peripheral::aplic::supervisor_msi_addr_cfg_h_tests::test_supervisor_msi_addr_cfg_h_low_hart_index_shift_out_of_range - should panic ... ok
+test register::hideleg::tests::hideleg_bits ... ok
+test peripheral::aplic::tests::struct_aplic_offset ... ok
+test register::hidelegh::tests::hidelegh_raw_roundtrip ... ok
+test register::hvictl::tests::hvictl_zero_iid ... ok
+test register::hvien::tests::hvien_bits ... ok
+test register::hvienh::tests::hvienh_hviph_raw_roundtrip ... ok
+test register::hvictl::tests::hvictl_fields ... ok
+test register::hvip::tests::hvip_bits ... ok
+test register::hviprio1h::tests::hviprio1h_raw_roundtrip ... ok
+test register::hviph::tests::hvienh_hviph_raw_roundtrip ... ok
+test register::hviprio1::tests::hviprio_prio_bytes ... ok
+test register::hviprio2::tests::hviprio_prio_bytes ... ok
+test register::hviprio2h::tests::hviprio2h_raw_roundtrip ... ok
+test register::midelegh::tests::midelegh_fields_bits ... ok
+test register::mideleg::tests::mideleg_bits ... ok
+test register::mie::tests::mie_mip_delegate_bits ... ok
+test register::mie::tests::mie_parsing_bits ... ok
+test register::mip::tests::mie_mip_delegate_bits ... ok
+test register::miph::tests::miph_raw_roundtrip ... ok
+test register::mieh::tests::mieh_raw_roundtrip ... ok
+test register::mireg::tests::miselect_value_and_mireg_raw ... ok
+test register::mip::tests::mip_parsing_bits ... ok
+test register::mvieh::tests::mvieh_raw_roundtrip ... ok
+test register::mvien::tests::mvien_bits ... ok
+test register::mvien::tests::mvien_zero ... ok
+test register::miselect::tests::miselect_value_and_mireg_raw ... ok
+test register::mviph::tests::mviph_raw_roundtrip ... ok
+test register::mtopi::tests::mtopi_parsing ... ok
+test register::mtopi::tests::mtopi_edge_cases ... ok
+test register::sie::tests::sie_bits ... ok
+test register::mtopei::tests::mtopei_parsing ... ok
+test register::sie::tests::sie_zero ... ok
+test register::sip::tests::sip_zero ... ok
+test register::siph::tests::siph_raw_roundtrip ... ok
+test register::sireg::tests::sireg_raw_roundtrip ... ok
+test register::siselect::tests::siselect_value ... ok
+test register::mvip::tests::mvip_zero ... ok
+test register::stopei::tests::stopei_parsing ... ok
+test register::stopi::tests::stopi_parsing ... ok
+test register::mvip::tests::mvip_bits ... ok
+test register::stopi::tests::stopi_zero_iid ... ok
+test register::vstopei::tests::vstopei_parsing_none ... ok
+test register::sip::tests::sip_bits ... ok
+test register::sieh::tests::sieh_raw_roundtrip ... ok
+test register::vsiselect::tests::vsiselect_value ... ok
+test register::vsiph::tests::vsieh_vsiph_raw_roundtrip ... ok
+test register::vstopi::tests::vstopi_parsing ... ok
+test register::vsie::tests::vsie_vsip_parsing_bits ... ok
+test tests::iid_convert_riscv_crate ... ok
+test tests::iid_new_bounds ... ok
+test tests::iid_consts ... ok
+test register::vsieh::tests::vsieh_vsiph_raw_roundtrip ... ok
+test register::vsip::tests::vsie_vsip_parsing_bits ... ok
+test register::vsireg::tests::vsireg_raw_roundtrip ... ok
+test register::vstopi::tests::vstopi_zero_iid ... ok
+test tests::iid_usage_match_if ... ok
+
+test result: ok. 101 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/riscv_cove-83beb6066a985066)
+
+running 3 tests
+test tests::test_cove_guest ... ok
+test tests::test_cove_host ... ok
+test tests::test_cove_interrupt ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/rustsbi-80da81d4ff205d62)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-full.rs (target/debug/deps/build_full-01217865afd5d0b6)
+
+running 2 tests
+test generated_extensions ... ok
+test rustsbi_impl_id ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-generics.rs (target/debug/deps/build_generics-ba8fb89dd1a4ddb4)
+
+running 1 test
+test test_impl_id ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-rename.rs (target/debug/deps/build_rename-8e235c184e58a924)
+
+running 2 tests
+test rustsbi_assign_multiple ... ok
+test rustsbi_assign_one ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/build-skip.rs (target/debug/deps/build_skip-5a81fb33e2bcaf8f)
+
+running 2 tests
+test rustsbi_skip_env_info ... ok
+test rustsbi_skip_extension ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/dynamic-generics.rs (target/debug/deps/dynamic_generics-2f18e743fdf6b390)
+
+running 1 test
+test test_impl_id ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/dynamic-priority.rs (target/debug/deps/dynamic_priority-87fcf21f0c32d013)
+
+running 2 tests
+test priority_assign_multiple ... ok
+test priority_multiple_fences ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/forward-struct.rs (target/debug/deps/forward_struct-4405702147884eac)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/rustsbi_macros-5cc269d28c0b3de5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/sbi_rt-e1742ec41b5add8d)
+
+running 1 test
+test base::tests::extension_id_defined ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/sbi_spec-79ebfcce3a4c1420)
+
+running 27 tests
+test base::tests::special_versions ... ok
+test base::tests::version_parse ... ok
+test base::tests::version_ordering ... ok
+test binary::counter_mask::tests::rustsbi_counter_index_mask ... ok
+test binary::counter_mask::tests::rustsbi_counter_mask_non_usize ... ok
+test base::tests::version_display ... ok
+test binary::hart_mask::tests::rustsbi_hart_mask ... ok
+test binary::hart_mask::tests::rustsbi_hart_mask_non_usize ... ok
+test binary::sbi_ret::tests::rustsbi_sbi_ret_constructors ... ok
+test tests::test_base ... ok
+test tests::test_binary ... ok
+test tests::test_dbcn ... ok
+test tests::test_cppc ... ok
+test tests::test_fwft ... ok
+test tests::test_hsm ... ok
+test tests::test_mpxy ... ok
+test tests::test_nacl ... ok
+test tests::test_srst ... ok
+test tests::test_spi ... ok
+test tests::test_dbtr ... ok
+test tests::test_sse ... ok
+test tests::test_rfnc ... ok
+test tests::test_pmu ... ok
+test tests::test_sta ... ok
+test tests::test_time ... ok
+test tests::test_susp ... ok
+test binary::hart_mask::tests::rustsbi_hart_ids_iterator ... ok
+
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests penglai
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests pmpm
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests riscv_aia
+
+running 3 tests
+test library/riscv-aia/src/lib.rs - Iid (line 25) ... ok
+test library/riscv-aia/src/lib.rs - Iid (line 33) ... ok
+test library/riscv-aia/src/lib.rs - Iid (line 59) ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+all doctests ran in 0.24s; merged doctests compilation took 0.23s
+   Doc-tests riscv_cove
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests rustsbi
+
+running 20 tests
+test library/rustsbi/src/lib.rs - (line 206) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 266) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 433) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 73) - compile ... ok
+test library/rustsbi/src/lib.rs - (line 401) ... ok
+test library/rustsbi/src/forward.rs - forward::Forward (line 22) ... ok
+test library/rustsbi/src/lib.rs - (line 156) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1028) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1060) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1112) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 597) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 918) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 1090) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 727) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 784) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 687) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 619) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 956) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 864) ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 987) ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+running 2 tests
+test library/rustsbi/src/lib.rs - RustSBI (line 633) - compile fail ... ok
+test library/rustsbi/src/lib.rs - RustSBI (line 892) - compile fail ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+all doctests ran in 0.37s; merged doctests compilation took 0.32s
+   Doc-tests rustsbi_macros
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests sbi_rt
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests sbi_spec
+
+running 29 tests
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::and (line 853) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::err (line 558) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::and_then (line 885) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::expect_err (line 802) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::expect (line 752) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::inspect_err (line 722) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::into_iter (line 1066) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::inspect (line 696) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_err_and (line 509) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err_unchecked (line 1039) - compile ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_ok_and (line 468) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_err (line 491) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map (line 581) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map_err (line 669) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::is_ok (line 448) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::or_else (line 946) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_unchecked (line 1019) - compile ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map_or_else (line 640) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::ok (line 535) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::map_or (line 617) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::or (line 912) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap (line 773) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err (line 827) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err_unchecked (line 1045) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap (line 779) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_err (line 821) - should panic ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_or_else (line 991) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_or (line 970) ... ok
+test library/sbi-spec/src/binary/sbi_ret.rs - binary::sbi_ret::SbiRet::unwrap_unchecked (line 1013) ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+all doctests ran in 0.36s; merged doctests compilation took 0.35s

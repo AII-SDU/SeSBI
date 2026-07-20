@@ -1,0 +1,134 @@
+make: 进入目录“/home/user/sesbi-JSA/SeSBI-code”
+rm -rf build  *.bin  *.map *.elf
+ CC   build/gos/kernel_c.o
+gos/kernel.c: In function ‘kernel_main’:
+gos/kernel.c:27:9: warning: implicit declaration of function ‘plic_init’ [-Wimplicit-function-declaration]
+   27 |         plic_init();
+      |         ^~~~~~~~~
+ CC   build/gos/plic_c.o
+ CC   build/gos/printk_c.o
+ CC   build/gos/string_c.o
+ CC   build/gos/uart_c.o
+ CC   build/gos/vs_timer_c.o
+ CC   build/gos/vs_trap_c.o
+gos/vs_trap.c: In function ‘do_vs_exception’:
+gos/vs_trap.c:115:25: warning: implicit declaration of function ‘plic_handle_irq’ [-Wimplicit-function-declaration]
+  115 |                         plic_handle_irq(regs);
+      |                         ^~~~~~~~~~~~~~~
+ AS   build/gos/boot_s.o
+ AS   build/gos/vs_entry_s.o
+ LD build/gos/gos.elf
+ OBJCOPY gos.bin
+ CC   build/benos/dump_pgtable_c.o
+ CC   build/benos/fork_c.o
+ CC   build/benos/fs_c.o
+ CC   build/benos/kallsyms_c.o
+ CC   build/benos/kernel_c.o
+ CC   build/benos/memset_c.o
+ CC   build/benos/mmu_c.o
+src/mmu.c:133:13: warning: ‘create_identical_mapping’ defined but not used [-Wunused-function]
+  133 | static void create_identical_mapping(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+ CC   build/benos/page_alloc_c.o
+ CC   build/benos/plic_c.o
+ CC   build/benos/sbi3_smoke_c.o
+ CC   build/benos/sched_c.o
+ CC   build/benos/sched_simple_c.o
+ CC   build/benos/stacktrace_c.o
+ CC   build/benos/stage2_mmu_c.o
+ CC   build/benos/syscall_c.o
+ CC   build/benos/timer_c.o
+src/timer.c: In function ‘riscv_vcpu_timer_event_start’:
+src/timer.c:23:9: warning: implicit declaration of function ‘riscv_vcpu_clear_interrupt’ [-Wimplicit-function-declaration]
+   23 |         riscv_vcpu_clear_interrupt(IRQ_VS_TIMER);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/timer.c: At top level:
+src/timer.c:33:6: warning: conflicting types for ‘riscv_vcpu_clear_interrupt’; have ‘void(int)’
+   33 | void riscv_vcpu_clear_interrupt(int intr)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/timer.c:23:9: note: previous implicit declaration of ‘riscv_vcpu_clear_interrupt’ with type ‘void(int)’
+   23 |         riscv_vcpu_clear_interrupt(IRQ_VS_TIMER);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/timer.c: In function ‘handle_timer_irq’:
+src/timer.c:96:9: warning: implicit declaration of function ‘tick_handle_periodic’ [-Wimplicit-function-declaration]
+   96 |         tick_handle_periodic();
+      |         ^~~~~~~~~~~~~~~~~~~~
+ CC   build/benos/trap_c.o
+src/trap.c: In function ‘vs_sbi_ecall_handle’:
+src/trap.c:141:17: warning: implicit declaration of function ‘riscv_vcpu_timer_event_start’ [-Wimplicit-function-declaration]
+  141 |                 riscv_vcpu_timer_event_start(regs->a0);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/trap.c: In function ‘do_exception’:
+src/trap.c:200:25: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+  200 |                         return;
+      |                         ^~~~~~
+src/trap.c:152:5: note: declared here
+  152 | int do_exception(struct pt_regs *regs, unsigned long scause)
+      |     ^~~~~~~~~~~~
+ CC   build/benos/uart_c.o
+ CC   build/benos/vmm_c.o
+ AS   build/benos/asm_test_s.o
+ AS   build/benos/boot_s.o
+ AS   build/benos/early_printk_s.o
+ AS   build/benos/entry_s.o
+ AS   build/benos/memset_s.o
+ CC   build/lib/printk_c.o
+ CC   build/lib/string_c.o
+ CC   build/usr/user_syscall_c.o
+ AS   build/usr/syscall_s.o
+ CC   build/virt/vs_device_emul_c.o
+virt/vs_device_emul.c: In function ‘emul_device’:
+virt/vs_device_emul.c:185:17: warning: implicit declaration of function ‘printk’ [-Wimplicit-function-declaration]
+  185 |                 printk("not support compressed instruction yet\n");
+      |                 ^~~~~~
+virt/vs_device_emul.c:220:17: warning: implicit declaration of function ‘emu_plic’ [-Wimplicit-function-declaration]
+  220 |                 emu_plic(&emu_mmio);
+      |                 ^~~~~~~~
+virt/vs_device_emul.c:221:1: warning: control reaches end of non-void function [-Wreturn-type]
+  221 | }
+      | ^
+ CC   build/virt/vs_main_c.o
+virt/vs_main.c: In function ‘vs_main’:
+virt/vs_main.c:63:9: warning: implicit declaration of function ‘jump_to_vs_mode’ [-Wimplicit-function-declaration]
+   63 |         jump_to_vs_mode(GUEST_BASE_ADDR);
+      |         ^~~~~~~~~~~~~~~
+ CC   build/virt/vs_vplic_c.o
+virt/vs_vplic.c: In function ‘emu_mmio_plic_claim’:
+virt/vs_vplic.c:31:22: warning: unused variable ‘val’ [-Wunused-variable]
+   31 |         unsigned int val;
+      |                      ^~~
+ AS   build/virt/vs_entry_s.o
+ CC kallsyms
+ LD .tmp_vmbenos1
+ NM .tmp_kallsyms1.S
+ CC .tmp_kallsyms1.o
+ LD .tmp_vmbenos2
+ NM .tmp_kallsyms2.S
+ CC .tmp_kallsyms2.o
+ LD build/benos/benos.elf
+ OBJCOPY benos.bin
+ CC   build/sbi/sbi_base_c.o
+ CC   build/sbi/sbi_console_dbcn_model_c.o
+ CC   build/sbi/sbi_dbcn_c.o
+ CC   build/sbi/sbi_ecall_c.o
+ CC   build/sbi/sbi_hsm_c.o
+ CC   build/sbi/sbi_ipi_c.o
+ CC   build/sbi/sbi_lib_c.o
+ CC   build/sbi/sbi_main_c.o
+ CC   build/sbi/sbi_pmp_encoding_model_c.o
+ CC   build/sbi/sbi_rfence_c.o
+ CC   build/sbi/sbi_srst_c.o
+ CC   build/sbi/sbi_time_c.o
+ CC   build/sbi/sbi_timer_c.o
+ CC   build/sbi/sbi_timer_deadline_c.o
+ CC   build/sbi/sbi_trap_c.o
+ CC   build/sbi/sbi_trap_dispatch_model_c.o
+ CC   build/sbi/uart_c.o
+ AS   build/sbi/base_s.o
+ AS   build/sbi/sbi_entry_s.o
+ AS   build/sbi/sbi_payload_s.o
+ LD build/sbi/mysbi.elf
+ OBJCOPY mysbi.bin
+ LD build/sbi/benos_payload.elf
+ OBJCOPY benos_payload.bin
+make: 离开目录“/home/user/sesbi-JSA/SeSBI-code”

@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/D_additional_matched_mutations/logs/sesbi/sbi_main.c.pristine	2026-07-11 22:09:06.037469085 +0800
++++ /home/user/sesbi-JSA/SeSBI-code/sbi/sbi_main.c	2026-07-11 22:09:28.252550379 +0800
+@@ -38,7 +38,7 @@
+ 
+ 	/* 对于RV64，对应的cfg寄存器是pmpcfg0，pmpcfg2，pmpcfg4... */
+ 	pmpcfg_csr   = (CSR_PMPCFG0 + (reg_idx >> 2)) & ~1;
+-	pmpcfg_shift = (reg_idx & 7) << 3;
++	pmpcfg_shift = (reg_idx & 3) << 3; /*MUT-D1-PMPCFG-BYTE-FOLD*/
+ 
+ 	pmpaddr_csr = CSR_PMPADDR0 + reg_idx;
+ 

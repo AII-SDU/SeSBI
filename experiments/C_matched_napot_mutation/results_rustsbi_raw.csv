@@ -1,0 +1,3 @@
+project,tag,injected,expected_hits,actual_hits,build_command,build_exit,test_command,cargo_exit,tests_total,tests_failed,completed,outcome,pmpm_test_binary_sha_changed
+rustsbi,baseline,no,0,0,cargo_test_--no-run_--no-fail-fast,0,cargo_test_--no-fail-fast,0,209,0,yes,BASELINE,baseline
+rustsbi,matched_napot,yes,1,1,cargo_test_--no-run_--no-fail-fast,0,cargo_test_--no-fail-fast,101,209,1,yes,CAUGHT,yes

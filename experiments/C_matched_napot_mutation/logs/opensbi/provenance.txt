@@ -1,0 +1,6 @@
+date_utc=2026-07-11T12:41:48Z
+experiment_head=98617cfb36619784bfe54f463e39bcda1a7673d1
+upstream_base=262571217c75c649115633d8075cb6a40d940733
+gcc=riscv64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+qemu=QEMU emulator version 6.2.0 (Debian 1:6.2+dfsg-2ubuntu6.28)
+platform/generic/configs/defconfig:CONFIG_SBIUNIT=y

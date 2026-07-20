@@ -1,0 +1,6 @@
+make -j8 PLATFORM=generic  # tag=m3_mpie
+build_exit=0
+patched_obj=build/lib/sbi/sbi_hart.o obj_sha256=12c149c0307115b78a5ec39f7a5c19dbba87f02dd61c27713fc7812a8f549a6d
+fw_dynamic_bin_sha256=266b799b8c22bfedba3eb5a47b1f2cb8ed38de516a0bc03d4a4cfc12a5df5f91
+timeout 60 qemu-system-riscv64 -M virt -nographic -bios build/platform/generic/firmware/fw_dynamic.bin  # tag=m3_mpie
+qemu_exit=124  (124=timeout-kill after tests finish = EXPECTED)

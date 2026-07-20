@@ -1,0 +1,11 @@
+--- /home/user/sesbi-JSA/experiments/C_matched_napot_mutation/logs/sesbi/sbi_main.c.pristine	2026-07-11 21:06:16.690417793 +0800
++++ /home/user/sesbi-JSA/SeSBI-code/sbi/sbi_main.c	2026-07-11 21:06:38.956430791 +0800
+@@ -68,7 +68,7 @@
+ 			 */ 
+ 			addrmask = (1UL << (order - PMP_SHIFT)) - 1;
+ 			pmpaddr	 &= ~addrmask;
+-			pmpaddr |= (addrmask >> 1);
++			pmpaddr |= addrmask; /*MUT-MATCHED-NAPOT*/
+ 		}
+ 	}
+ 

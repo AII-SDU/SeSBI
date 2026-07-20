@@ -1,0 +1,28 @@
+M1 NAPOT injection — reproducible proof of injection
+=====================================================
+Date of re-run: 2026-07-10 (driver fixed: correct file sbi_pmp.c + variable pmp->addr)
+
+Injection site (verbatim, lib/sbi/sbi_pmp.c:62):
+  BEFORE:  pmp->addr |= (addrmask >> 1);
+  AFTER:   pmp->addr |= addrmask; /*MUT-NAPOT*/
+  (drops the ">> 1", enlarging the NAPOT region to twice the requested size)
+
+Source diff:
+  62c62
+  <             pmp->addr |= (addrmask >> 1);
+  ---
+  >             pmp->addr |= addrmask; /*MUT-NAPOT*/
+
+Proof the mutation reached the compiled firmware (SHA-256):
+  sbi_pmp.o      baseline 6ad05bf43d4f4f38bfdf0c39be37b597cf8f17cbcd1c242e43e827fa2fff45fe
+  sbi_pmp.o      mutated  5444977e19c68d433a442f5d284631f6971268754fb3eee471dcfafc62be9c56   (CHANGED)
+  fw_dynamic.bin baseline 2c72b3c8db7171b8a3a0342a3d0b0f7375a0350990af259fa3d5360f02b87a5d
+  fw_dynamic.bin mutated  6c81241e326e4e8595e0338e42d568919a39100a7df259fdd4a0715c7b19ede1   (CHANGED)
+
+Test outcome: 41/41 OpenSBI unit tests PASS (0 FAILED) => verdict MISSED.
+Why the test log is byte-identical to baseline: the 41 upstream unit tests cover
+atomic/string/math/console/locks/bitops/bitmap/ecall; none exercises the PMP
+address-encoding path sbi_pmp_set(). A NAPOT defect confined to that path
+therefore leaves test output unchanged. The firmware binary DID change (SHA above);
+the test suite simply never calls the mutated code. This is the coverage gap the
+experiment demonstrates.

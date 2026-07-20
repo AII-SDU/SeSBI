@@ -1,0 +1,6 @@
+tag=d3_pmpcfg_bank_fold
+expected_hits=1
+actual_hits=1
+pristine_source_sha256=7b57908ec423058d4daeb35c8a9bb119ea079456d112e26166d2195e87256e7f
+mutant_source_sha256=1c73a75cb7d580aae0111d228bba73b89f0d4c3f291fff927ea3b72c55d2a7ba
+marker=MUT-D3-PMPCFG-BANK-FOLD

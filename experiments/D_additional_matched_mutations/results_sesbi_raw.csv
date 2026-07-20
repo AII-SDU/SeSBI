@@ -1,0 +1,5 @@
+project,tag,injected,expected_hits,actual_hits,clean_exit,build_exit,qemu_exit,boot_marker,snapshot_seen,base_probe_succeeded,pmpcfg0,pmpaddr0,pmpaddr1,native_outcome,distinguishing_domain,obj_sha_changed,firmware_sha_changed
+sesbi,baseline,no,0,0,0,0,124,yes,yes,yes,0x1f1f,0xffffffffffffffff,0x20007fff,BASELINE_PASS,baseline,baseline,baseline
+sesbi,d1_pmpcfg_byte_fold,yes,1,1,0,0,124,yes,yes,yes,0x1f1f,0xffffffffffffffff,0x20007fff,SURVIVED_NONTRIGGERING_INPUT,reg_idx>=4; fixed boot uses reg_idx=0/1,yes,yes
+sesbi,d2_napot_base_low32,yes,1,1,0,0,124,yes,yes,yes,0x1f1f,0xffffffffffffffff,0x20007fff,SURVIVED_NONTRIGGERING_INPUT,NAPOT start>=2^32; fixed boot starts are below 2^32 or full-space override,yes,yes
+sesbi,d3_pmpcfg_bank_fold,yes,1,1,0,0,124,yes,yes,yes,0x1f1f,0xffffffffffffffff,0x20007fff,SURVIVED_NONTRIGGERING_INPUT,reg_idx>=8; fixed boot uses reg_idx=0/1,yes,yes

@@ -1,0 +1,3 @@
+cargo test -p sbi-spec  # tag=baseline_spec
+cargo_test_exit=0
+parsed passed=56 failed=0 total=56 completed=yes
